@@ -1,25 +1,49 @@
 // Require constants
 const 
     User = require('../models/User'),
-    Resume = require('../models/User');
-
+    Project = require('../models/User');
 
 // Export controls:
 module.exports = {
-    // Create Resume
+    // Create Project
     create: (req, res) => {
         User.findById(req.params.id, (err, user) => {
-            if (err) res.json({ success: false, err })
-            user.resume.push(req.body)
+            if (err) return res.json({ success: false, err })
+            user.resume.projects.push(req.body)
             user.save(err => {
-                if (err) console.log(err)
-                res.json({ success: true, user })
+                if (err) res.json({ success: false, err })
+                res.json({ success: true, user})
             })
         })
     },
-    // Show Resume
+    // Index all projects
+    index: (req, res) => {
+        Project.find({}, (err, projects) => {
+            if (err) res.json({ success: false, err })
+            res.json({ success: true, projects })
+        })
+    },
+    // Show 1 project
     show: (req, res) => {
-        let { user_id, resume_id } = req.params
-        Resume.find({ resume:})
+        Project.findById(req.params.id, (err, project) => {
+            res.json({ success: true, project })
+        })
+    },
+    // Update project
+    update: (req, res) => {
+        Project.findById(req.params.id, (err, updatedProject) => {
+            Object.assign(updatedProject, req.body)
+            updatedProject.save((err, updatedProject) => {
+                if (err) res.json({ success: false, err })
+                res.json({ success: true, updatedProject})
+            })
+        })
+    },
+    // Destroy project
+    destroy: (req, res) => {
+        Project.findByIdAndRemove(req.params.id, (err, deletedProject) => {
+            if (err) res.json({ success: false, err })
+            res.json({ success: true, deletedUser })
+        })
     }
 }
