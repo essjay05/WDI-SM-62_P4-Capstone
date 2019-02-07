@@ -14,11 +14,11 @@ projectsRouter.post('/', projectsCtrl.create);
 // Index: Show all projects
 projectsRouter.get('/', projectsCtrl.index);
 // Show all projects
-projectsRouter.get('/:proj_id', projectsCtrl.show);
+projectsRouter.get('/:id', projectsCtrl.show);
 // Update Project
-projectsRouter.patch('/:proj_id', projectsCtrl.update);
+projectsRouter.patch('/:id', projectsCtrl.update);
 // Delete Project
-projectsRouter.delete('/:proj_id', projectsCtrl.destroy);
+projectsRouter.delete('/:id', projectsCtrl.destroy);
 
 // Export module = 
 module.exports = projectsRouter;
