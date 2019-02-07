@@ -31,7 +31,12 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 
 // ROUTES
-
+app.get('/api', (req, res) => {
+    res.json({ message: "API ROOT" })
+});
+// Require userRouter
+const userRouter = require('./routes/users.js');
+app.use('/api/users', userRouter);
 
 
 // LISTENING PORT
