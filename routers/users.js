@@ -6,6 +6,9 @@ const
     verifyToken = require('../serverAuth').verifyToken;
 
 // Routes
+// Index
+usersRouter.get('/', usersCtrl.index);
+
 // Create
 usersRouter.post('/', usersCtrl.create);
 
@@ -13,11 +16,8 @@ usersRouter.post('/', usersCtrl.create);
 usersRouter.post('/authenticate', usersCtrl.authenticate);
 
 // Verify Token
-usersRouter.use(verifyToken);
+// usersRouter.use(verifyToken);
 // PROTECTED Routes
-// Index
-usersRouter.get('/', usersCtrl.index);
-
 // Show 1
 usersRouter.get('/:id', usersCtrl.show);
 

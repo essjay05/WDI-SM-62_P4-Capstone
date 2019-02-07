@@ -19,7 +19,7 @@ const resumeSchema = new mongoose.Schema({
     title: { type: String },
     tagLine: { type: String },
     skills: [{ type: String }],
-    aboutUser: { type: Text },
+    aboutUser: { type: String },
     linkedIn: { type: String },
     github: { type: String },
     website: { type: String },
