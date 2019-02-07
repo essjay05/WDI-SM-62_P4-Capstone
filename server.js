@@ -11,7 +11,7 @@ const
     mongoose = require('mongoose'),
     cors = require('cors'),
     axios = require('axios'),
-    MONGODB_URI = process.env.MONGDOB_URI || 'mongodb://localhost:27017/capstone',
+    MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone',
     PORT = process.env.PORT || 3000;
 
 // CONNECT TO MONGOOSE
