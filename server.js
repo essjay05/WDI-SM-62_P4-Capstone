@@ -35,11 +35,11 @@ app.get('/api', (req, res) => {
     res.json({ message: "API ROOT" })
 });
 // Require usersRouter
-const usersRouter = require('./routers/users.js');
+const usersRouter = require('./routers/users');
 app.use('/api/users', usersRouter);
 // Require projectsRouter
-const projectsRouter = require('./routers/projects.js');
-app.use('/api/users/:id/projects')
+const projectsRouter = require('./routers/projects');
+app.use('/api/users/:id/projects', projectsRouter);
 // 404 error/route:
 app.get("*", (req, res) => {
     res.sendStatus(404);

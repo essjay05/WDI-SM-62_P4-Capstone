@@ -2,8 +2,8 @@
 const
     express = require('express'),
     projectsRouter = new express.Router(),
-    projectsCtrl = require('../controllers/projects.js'),
-    verifyToken = require('../serverAuth').verifyToken;
+    projectsCtrl = require('../controllers/projects.js');
+    // verifyToken = require('../serverAuth').verifyToken;
 
 // Verify Token
 // usersRouter.use(verifyToken);

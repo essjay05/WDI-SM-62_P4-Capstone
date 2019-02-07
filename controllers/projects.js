@@ -8,19 +8,21 @@ module.exports = {
     // Create Project
     create: (req, res) => {
         User.findById(req.params.id, (err, user) => {
+            console.log(req.params.id)
+            console.log('BREAK')
+            console.log(res)
             if (err) return res.json({ success: false, err })
-            user.resume.projects.push(req.body)
-            user.save(err => {
-                if (err) res.json({ success: false, err })
+            // user.resume.projects.push(req.body)
+            // user.save(err => {
+            //     if (err) res.json({ success: false, err })
                 res.json({ success: true, user})
             })
-        })
+        // })
     },
     // Index all projects
     index: (req, res) => {
-        Project.find({}, (err, projects) => {
-            if (err) res.json({ success: false, err })
-            res.json({ success: true, projects })
+        User.findById(req.params.id, (err, user) => {
+        
         })
     },
     // Show 1 project

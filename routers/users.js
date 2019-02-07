@@ -3,6 +3,7 @@ const
     express = require('express'),
     usersRouter = new express.Router(),
     usersCtrl = require('../controllers/users.js'),
+    projectsRouter = require('./projects'),
     verifyToken = require('../serverAuth').verifyToken;
 
 // USERS CRUD Routes
@@ -22,6 +23,13 @@ const
     usersRouter.patch('/:id', usersCtrl.update);
     // Delete 
     usersRouter.delete('/:id', usersCtrl.destroy);
+
+// Middleware route to route to projects:
+    // usersRouter.use('/:id/projects', (req, res) => {
+    //     console.log(re)
+    //     req.userId = req.params.userId;
+    //     // next
+    // }, projectsRouter);
 
 // Export module
 module.exports = usersRouter;
