@@ -37,6 +37,12 @@ app.get('/api', (req, res) => {
 // Require usersRouter
 const usersRouter = require('./routers/users.js');
 app.use('/api/users', usersRouter);
+// // Require resumesRouter
+// const resumesRouter = require('./routers/resumes.js/index.js');
+// app.use('/api/users/:id/resume');
+// // Require projectsRouter
+// const projectsRouter = require('./routers/projects.js');
+// app.use('/api/users/:id/resumes/:id/projects')
 // 404 error/route:
 app.get("*", (req, res) => {
     res.sendStatus(404);
