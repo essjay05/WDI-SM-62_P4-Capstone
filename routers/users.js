@@ -7,10 +7,10 @@ const
 
 // USERS CRUD Routes
 // Non-protected Routes
-    // Index
-    usersRouter.get('/', usersCtrl.index);
     // Create
     usersRouter.post('/', usersCtrl.create);
+    // Index
+    usersRouter.get('/', usersCtrl.index);
     // Authenticate
     usersRouter.post('/authenticate', usersCtrl.authenticate);
     // Verify Token
