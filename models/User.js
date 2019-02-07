@@ -3,7 +3,7 @@ const
     mongoose = require('mongoose'),
     bcrypt = require('bcrypt-nodejs');
 
-// Project Schema (nested in Resume Schema)
+// Project Schema (nested in Resume within User Schema)
 const projectSchema = new mongoose.Schema ({
     title: { type: String },
     description: { type: String },
@@ -12,27 +12,24 @@ const projectSchema = new mongoose.Schema ({
     githubLink: { type: String }
 })
 
-// Resume Schema (nested in User Schema)
-const resumeSchema = new mongoose.Schema({
-    bannerImg: { type: String },
-    profileImg: { type: String },
-    title: { type: String },
-    tagLine: { type: String },
-    skills: [{ type: String }],
-    aboutUser: { type: String },
-    linkedIn: { type: String },
-    github: { type: String },
-    website: { type: String },
-    projects: [projectSchema]
-}, { timestamps: true })
-
 // User Schema
 const userSchema = new mongoose.Schema({
     firstName: { type: String },
     lastName: { type: String },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    resume: [resumeSchema]
+    resume: {
+        bannerImg: { type: String },
+        profileImg: { type: String },
+        title: { type: String },
+        tagLine: { type: String },
+        skills: [{ type: String }],
+        aboutUser: { type: String },
+        linkedIn: { type: String },
+        github: { type: String },
+        website: { type: String },
+        projects: [projectSchema]
+    }
 }, { timestamps: true })
 
 // Generate/bcrypt password
@@ -53,6 +50,9 @@ userSchema.pre('save', function (next) {
     next()
 })
 
-// Export User Model
-const User = mongoose.model('User', userSchema)
-module.exports = User;
+// Export User, Resume, and Projects Models
+const 
+    User = mongoose.model('User', userSchema),
+    Project = mongoose.model('Project', projectSchema);
+
+module.exports = User, Project;
