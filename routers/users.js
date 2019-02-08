@@ -4,6 +4,7 @@ const
     usersRouter = new express.Router(),
     usersCtrl = require('../controllers/users.js'),
     projectsRouter = require('./projects'),
+    projectsCtrl = require('../controllers/projects.js'),
     verifyToken = require('../serverAuth').verifyToken;
 
 // USERS CRUD Routes
@@ -24,12 +25,17 @@ const
     // Delete 
     usersRouter.delete('/:id', usersCtrl.destroy);
 
-// Middleware route to route to projects:
-    // usersRouter.use('/:id/projects', (req, res) => {
-    //     console.log(re)
-    //     req.userId = req.params.userId;
-    //     // next
-    // }, projectsRouter);
+    // PROJECTS CRUD Routes
+        // Create project
+        usersRouter.post('/:id/projects', projectsCtrl.create);
+        // Index: Show all projects
+        usersRouter.get('/:id/projects', projectsCtrl.index);
+        // Show all projects
+        usersRouter.get('/:id/projects/:proj_id', projectsCtrl.show);
+        // Update Project
+        usersRouter.patch('/:id/projects/:proj_id', projectsCtrl.update);
+        // Delete Project
+        usersRouter.delete('/:id/projects/:proj_id', projectsCtrl.destroy);
 
 // Export module
 module.exports = usersRouter;

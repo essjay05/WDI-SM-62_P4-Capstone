@@ -37,9 +37,9 @@ app.get('/api', (req, res) => {
 // Require usersRouter
 const usersRouter = require('./routers/users');
 app.use('/api/users', usersRouter);
-// Require projectsRouter
-const projectsRouter = require('./routers/projects');
-app.use('/api/users/:id/projects', projectsRouter);
+// // Require projectsRouter
+// const projectsRouter = require('./routers/projects');
+// app.use('/api/users/:id/projects', projectsRouter);
 // 404 error/route:
 app.get("*", (req, res) => {
     res.sendStatus(404);
