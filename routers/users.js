@@ -3,9 +3,8 @@ const
     express = require('express'),
     usersRouter = new express.Router(),
     usersCtrl = require('../controllers/users.js'),
-    projectsRouter = require('./projects'),
-    projectsCtrl = require('../controllers/projects.js'),
-    verifyToken = require('../serverAuth').verifyToken;
+    projectsCtrl = require('../controllers/projects.js');
+    // verifyToken = require('../serverAuth').verifyToken;
 
 // USERS CRUD Routes
 // Non-protected Routes
@@ -30,8 +29,6 @@ const
         usersRouter.post('/:id/projects', projectsCtrl.create);
         // Index: Show all projects
         usersRouter.get('/:id/projects', projectsCtrl.index);
-        // Show all projects
-        usersRouter.get('/:id/projects/:proj_id', projectsCtrl.show);
         // Update Project
         usersRouter.patch('/:id/projects/:proj_id', projectsCtrl.update);
         // Delete Project
