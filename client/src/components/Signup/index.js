@@ -2,33 +2,32 @@ import React, { Component } from 'react';
 import httpClient from '../../utilities/httpClient';
 import axios from 'axios';
 
-export default class Signup extends Component {
+class Signup extends Component {
     state = {
         email: "",
-        password: "", 
-        firstName: "", 
-        lastName: ""
+        password: "",
+        name: ""
     }
 
     handleChange = (e) => {
         let { name, value } = e.target;
-        this.setState({ [name]: value })
-    }
+        this.setState({ [name]: value });
+    };
 
     handleSubmit = (e) => {
         // debugger
         e.preventDefault();
-        // Post to /api/users to Create new User
         axios.post('/api/users', this.state)
             .then( res => {
                 let token = res.data.token;
                 httpClient.setToken(token);
-                this.props.history.push('/users');
+                this.props.history.push('/brewIndex');
+                
             })
     };
 
-    render () {
-        let { firstName, lastName, email, password } = this.state;
+    render() {
+        let { email, password, firstName, lastName } = this.state;
         return (
             <div>
                 <h1> Signup </h1>
@@ -72,6 +71,8 @@ export default class Signup extends Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
-};
+}
+
+export default Signup;
