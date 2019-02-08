@@ -1,46 +1,55 @@
 import React, { Component } from 'react';
-// import httpClient from '../../utilities/httpClient';
+import httpClient from '../../utilities/httpClient';
 import axios from 'axios';
 
-class Signup extends Component {
-    // state = {
-    //     email: "",
-    //     password: "",
-    //     name: ""
-    // }
+export default class Signup extends Component {
+    state = {
+        email: "",
+        password: "", 
+        firstName: "", 
+        lastName: ""
+    }
 
-    // handleChange = (e) => {
-    //     let { name, value } = e.target;
-    //     this.setState({ [name]: value });
-    // };
+    handleChange = (e) => {
+        let { name, value } = e.target;
+        this.setState({ [name]: value })
+    }
 
-    // handleSubmit = (e) => {
-    //     // debugger
-    //     e.preventDefault();
-    //     axios.post('/api/users', this.state)
-    //         .then( res => {
-    //             let token = res.data.token;
-    //             httpClient.setToken(token);
-    //             this.props.history.push('/brewIndex');
-                
-    //         })
-    // };
+    handleSubmit = (e) => {
+        // debugger
+        e.preventDefault();
+        // Post to /api/users to Create new User
+        axios.post('/api/users', this.state)
+            .then( res => {
+                let token = res.data.token;
+                httpClient.setToken(token);
+                this.props.history.push('/users');
+            })
+    };
 
-    render() {
-        let { email, password, name } = this.state;
+    render () {
+        let { firstName, lastName, email, password } = this.state;
         return (
             <div>
                 <h1> Signup </h1>
                 <div className="row">
                     <div className="column column-50 column-offset-25">
                         <form onSubmit={this.handleSubmit}>
-                            <label>Name: </label>
+                            <label>First Name: </label>
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your Name"
+                                placeholder="Your First Name"
                                 onChange={this.handleChange}
-                                value={name}
+                                value={firstName}
+                                />
+                            <label>Last Name: </label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Last Name"
+                                onChange={this.handleChange}
+                                value={lastName}
                                 />
                             <label>Email: </label>
                             <input 
@@ -63,8 +72,6 @@ class Signup extends Component {
                     </div>
                 </div>
             </div>
-        );
+        )
     }
-}
-
-export default Signup;
+};

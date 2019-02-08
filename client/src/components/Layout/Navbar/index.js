@@ -15,7 +15,7 @@ export default ({ currentUser }) => {
             ? (
                 <div className="column column-50 column-offset-25">
                     <span>
-                        <Link className="nav-link" to="/brewIndex"> Brew Index </Link>
+                        <Link className="nav-link" to="/usersIndex"> Users Index </Link>
                         <Link className="nav-link" to="/profile"> Profile </Link>
                         <Link className="nav-link" to="/logout"> Logout </Link>
                     </span>
