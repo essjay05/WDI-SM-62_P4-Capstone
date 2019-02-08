@@ -21,14 +21,17 @@ httpClient.getCurrentUser = function() {
     return null
 };
 
-// Authenticate
+// Authenticate using async
 httpClient.authenticate = async function (credentials, url) {
     try {
+        // Wait for Post method to complete with user login to retrieve credentials for data
         let res = await this({ method: "post", url, data: credentials })
         const token = res.data.token;
 
         if (token) {
+            // Once you get the token from the header then set the token for the current user
             this.defaults.headers.common.token = this.setToken(token);
+            // Return decoded token
             return jwtDecode(token)
         } else {
             return false;
@@ -40,7 +43,9 @@ httpClient.authenticate = async function (credentials, url) {
 
 // Logout
 httpClient.logout = function() {
+    // Remove the token upon logout
     localStorage.removeItem('token');
+    // Delete the token from the headers upon logout
     delete this.defaults.headers.common.token;
     return true;
 };
