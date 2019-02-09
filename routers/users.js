@@ -4,7 +4,7 @@ const
     usersRouter = new express.Router(),
     usersCtrl = require('../controllers/users.js'),
     projectsCtrl = require('../controllers/projects.js');
-    // verifyToken = require('../serverAuth').verifyToken;
+    verifyToken = require('../serverAuth').verifyToken;
 
 // USERS CRUD Routes
 // Non-protected Routes
@@ -15,7 +15,7 @@ const
     // Authenticate
     usersRouter.post('/authenticate', usersCtrl.authenticate);
     // Verify Token
-    // usersRouter.use(verifyToken);
+    usersRouter.use(verifyToken);
 // PROTECTED USERS Routes
     // Show 1
     usersRouter.get('/:id', usersCtrl.show);

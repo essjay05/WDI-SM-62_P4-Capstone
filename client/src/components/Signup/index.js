@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import httpClient from '../../utilities/httpClient';
-import axios from 'axios';
+// import axios from 'axios';
 
 class Signup extends Component {
     state = {
         email: "",
         password: "",
-        name: ""
+        firstName: "",
+        lastName: ""
     }
 
     handleChange = (e) => {
@@ -14,20 +15,30 @@ class Signup extends Component {
         this.setState({ [name]: value });
     };
 
-    handleSubmit = (e) => {
-        // debugger
+    handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('/api/users', this.state)
-            .then( res => {
-                let token = res.data.token;
-                httpClient.setToken(token);
-                this.props.history.push('/brewIndex');
+        // debugger
+        let user = await httpClient.authenticate(this.state, "/api/users")
+        debugger
+        if (user) {
+            this.props.onSignupSuccess()
+            this.props.history.push('/usersIndex');
+            debugger
+        }
+        // axios.post('/api/users', this.state)
+        //     .then( res => {
+        //         debugger
+        //         let token = res.data.token;
+        //         httpClient.setToken(token);
+        //         this.props.history.push('/usersIndex');
                 
-            })
+        //     })
+        debugger
     };
 
     render() {
         let { email, password, firstName, lastName } = this.state;
+        
         return (
             <div>
                 <h1> Signup </h1>

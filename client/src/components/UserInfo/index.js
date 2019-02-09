@@ -24,7 +24,7 @@ export default class UserInfo extends Component {
         return (
             <div>
                 <h3>{user.name}</h3>
-                <img src="${user.profileImg}">Profile Img</img>
+                <img src="${user.profileImg}" alt="User Profile">Profile Photo</img>
                 <Link
                     className="nav-link"
                     user={ user }

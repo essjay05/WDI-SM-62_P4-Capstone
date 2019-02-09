@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Layout from './components/Layout';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import httpClient from './utilities/httpClient';
 import './App.css';
 
@@ -33,6 +34,9 @@ class App extends Component {
                     }} />
                     <Route exact path="/users" render={(props) => {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
+                    }} />
+                    <Route exact path="/logout" render={() => {
+                        return <Logout logout={this.logout} />
                     }} />
                 </Switch>
             </Layout>
