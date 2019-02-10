@@ -17,6 +17,7 @@ export default ({ currentUser }) => {
                     <span>
                         <Link className="nav-link" to="/usersIndex"> Users Index </Link>
                         <Link className="nav-link" to="/profile"> Profile </Link>
+                        <Link className="nav-link" to="/editLogin"> Edit Login </Link>
                         <Link className="nav-link" to="/logout"> Logout </Link>
                     </span>
                 </div>

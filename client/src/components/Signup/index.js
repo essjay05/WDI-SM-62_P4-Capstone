@@ -17,7 +17,7 @@ class Signup extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        // debugger
+        debugger
         let user = await httpClient.authenticate(this.state, "/api/users")
         debugger
         if (user) {
