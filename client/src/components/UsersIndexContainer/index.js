@@ -3,20 +3,35 @@ import axios from 'axios';
 import UserInfo from '../UserInfo';
 
 export default class UsersIndexContainer extends Component {
-    state = {
-        users: [],
-        currentUser: null
-    }
 
-    componentDidMount() {
-        axios('/api/users')
-            .then( res => {
-                console.log(res.users)
+    state = {
+        users:  [],
+        loading: true
+    }
+    // Figure out how to load USERS array
+    async componentDidMount() {
+        let { currentUser } = this.props
+        
+        try {
+            debugger
+            let { data: { response: { users } }} = await axios.get('/api/users');
+            let { data: { payload } } = await axios.get(`/api/users/${currentUser._id}`);
+            debugger
+            console.log(this.props)
+            console.log('Break')
+            console.log(this.state)
+            this.setState({ 
+                // users,
+                user: payload, 
+                favorites: payload.favorites, 
+                loading: false 
             })
-            .catch(err => {
-                debugger
-            })
-            this.setState({ currentUser: this.props.currentUser })
+            debugger
+            console.log('this.state is below')
+            console.log(this.state)
+        } catch(err) {
+            console.log(err);
+        }
     }
 
     render() {
@@ -28,6 +43,8 @@ export default class UsersIndexContainer extends Component {
                 <aside className="aspect-ratio">/</aside>
                 <article>
                     <div>
+                        <h3>All Users Index List Goes Here</h3>
+                        <ul>
                         { users.map((user, i) => {
                         return <div key={i}>
                             <UserInfo
@@ -37,11 +54,11 @@ export default class UsersIndexContainer extends Component {
                                 onClick={this.handleClick}
                             />
                         </div>
-                    })}
+                        })}
+                        </ul>  
                     </div>
                 </article>
             </div>
         )
     }
-
 }

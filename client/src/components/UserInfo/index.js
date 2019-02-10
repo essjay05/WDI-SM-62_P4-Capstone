@@ -23,12 +23,12 @@ export default class UserInfo extends Component {
         let { user } = this.props;
         return (
             <div>
-                <h3>{user.name}</h3>
+                <h3>{user.name}User Name Here</h3>
                 <img src="${user.profileImg}" alt="User Profile">Profile Photo</img>
                 <Link
                     className="nav-link"
                     user={ user }
-                    to={`/users/${user.id}`}>
+                    to={`/users/${user.id}`}>Link to User's Profile Page
                 </Link>
             </div>
         )

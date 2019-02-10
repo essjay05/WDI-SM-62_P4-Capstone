@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class Edit extends Component {
-    
+class Signup extends Component {
     state = {
-        email: this.props.currentUser.email,
+        email: "",
         password: "",
-        name: this.props.currentUser.name
+        firstName: "",
+        lastName: ""
     }
 
     handleChange = (e) => {
@@ -14,39 +14,42 @@ export default class Edit extends Component {
         this.setState({ [name]: value });
     };
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        let { currentUser } = this.props
-        axios.patch(`/api/users/${currentUser._id}`, this.state)
-            .then( res => {
-                this.props.history.push('/profile');    
-            })
-    };
-
-    handleDelete = (e) => {
-        e.preventDefault();
-        let { currentUser } = this.props
-        axios.delete(`/api/users/${currentUser._id}`)
-            .then( res => {
-                this.props.history.push('/logout');
-            })
+        // debugger
+        let user = await httpClient.authenticate(this.state, "/api/users")
+        debugger
+        if (user) {
+            this.props.onSignupSuccess()
+            this.props.history.push('/usersIndex');
+            debugger
+        }
     };
 
     render() {
-        let { email, password, name } = this.state;
+        let { email, password, firstName, lastName } = this.state;
+        
         return (
             <div>
-                <h1> Edit Profile </h1>
+                <h1> Signup </h1>
                 <div className="row">
                     <div className="column column-50 column-offset-25">
                         <form onSubmit={this.handleSubmit}>
-                            <label>Name: </label>
+                            <label>First Name: </label>
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your Name"
+                                placeholder="Your First Name"
                                 onChange={this.handleChange}
-                                value={name}
+                                value={firstName}
+                                />
+                            <label>Last Name: </label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Last Name"
+                                onChange={this.handleChange}
+                                value={lastName}
                                 />
                             <label>Email: </label>
                             <input 
@@ -66,10 +69,11 @@ export default class Edit extends Component {
                                 />
                             <input type="submit" />
                         </form>
-                        <button onClick={this.handleDelete}>Delete</button>
                     </div>
                 </div>
             </div>
         );
     }
 }
+
+export default Signup;
