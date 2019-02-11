@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 export default class ResumeForm extends Component {
+    state = {
+        projects:  [],
+        currentUser: null,
+        loading: true
+    }
+    // Figure out how to load USERS array
+
+    async componentDidMount() {
+        let { currentUser } = this.props
+        
+        try {
+            let { data: { payload } } = await axios.get(`/api/users/${currentUser._id}`);
+            this.setState({ 
+                projects: payload.projects,
+                user: payload, 
+                loading: false 
+            })
+            } catch(err) {
+            console.log(err);
+        }
+    }   
 
     render () {
+        let { currentUser, projects } = this.state;
         return(
             <div className="resume-container">
-                <h1>Resume Form goes here</h1>
+
+                <h1>{currentUser.firstName} {currentUser.lastName}'s Resume Form goes here</h1>
                 <div>
                     <h3>Header/Hero Img upload goes here</h3>
                     <img src="#">Hero Image</img>
@@ -61,6 +85,12 @@ export default class ResumeForm extends Component {
                 </div>
                 <div className="projects-container">
                     <h3>Project Boxes Go here</h3>
+                    { projects.map(( project, i ) => {
+                        return<div key={i}>
+                            <h5>{project.name}</h5>
+                            <p>{project.description}</p>
+                            </div>
+                    })}
                 </div>
             </div>
         ) 

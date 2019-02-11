@@ -10,7 +10,7 @@ export default class UserInfo extends Component {
     }
 
     async componentDidMount() {
-        let { currentUser, user, users } = this.props;
+        let { currentUser, users } = this.props;
         try {
             let { data: { payload } } = await axios.get(`/api/users/${currentUser._id}`);
             console.log( payload )
@@ -21,10 +21,12 @@ export default class UserInfo extends Component {
 
     render() {
         let { user } = this.props;
+        console.log(user)
+        debugger
         return (
             <div>
-                <h3>{user.firstName}{user.lastName}User Name Here</h3>
-                <img src="${user.profileImg}" alt="User Profile">Profile Photo</img>
+                <h3>{user.firstName} {user.lastName} Profile Here</h3>
+                {/* <img src="${user.profileImg}" alt="User Profile">Profile Photo</img> */}
                 <Link
                     className="nav-link"
                     user={ user }

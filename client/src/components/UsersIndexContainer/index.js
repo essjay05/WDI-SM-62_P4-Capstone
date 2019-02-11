@@ -55,7 +55,8 @@ export default class UsersIndexContainer extends Component {
         let { currentUser } = this.props;
         return (
             <div className="grid usersIndexContainer">
-                <h1 className="usersIndexTitle">List of All Users</h1>
+                <h1>Hello, {currentUser.firstName}!</h1>
+                <h3 className="usersIndexTitle">List of All Users</h3>
                 <aside className="aspect-ratio"></aside>
                 <article>
                     <div>
@@ -67,7 +68,7 @@ export default class UsersIndexContainer extends Component {
                             <UserInfo
                                 key={i}
                                 currentUser={ currentUser }
-                                users={ user }
+                                user={ user }
                                 onClick={this.handleClick}
                             />
                         </div>
