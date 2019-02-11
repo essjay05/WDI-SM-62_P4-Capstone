@@ -40,7 +40,7 @@ class App extends Component {
                     <Route exact path="/users" render={(props) => {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
-                    <Route exact path="/profile" render={(props) => {
+                    <Route exact path="/resume" render={(props) => {
                         return this.state.currentUser ? <Resume {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
                     <Route exact path="/logout" render={() => {

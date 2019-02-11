@@ -15,9 +15,9 @@ export default ({ currentUser }) => {
             ? (
                 <div className="column column-50 column-offset-25">
                     <span>
-                        <Link className="nav-link" to="/usersIndex"> Users Index </Link>
-                        <Link className="nav-link" to="/profile"> Profile </Link>
-                        <Link className="nav-link" to="/editLogin"> Edit Login </Link>
+                        <Link className="nav-link" to="/users"> Users Index </Link>
+                        <Link className="nav-link" to="/resume"> Resume</Link>
+                        <Link className="nav-link" to="/edit"> Edit </Link>
                         <Link className="nav-link" to="/logout"> Logout </Link>
                     </span>
                 </div>
