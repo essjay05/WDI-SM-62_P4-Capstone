@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import httpClient from '../../utilities/httpClient';
 // import axios from 'axios';
 
-class Signup extends Component {
+export default class Signup extends Component {
     state = {
         email: "",
         password: "",
@@ -39,7 +39,7 @@ class Signup extends Component {
                             <label>First Name: </label>
                             <input
                                 type="text"
-                                name="name"
+                                name="firstName"
                                 placeholder="Your First Name"
                                 onChange={this.handleChange}
                                 value={firstName}
@@ -47,7 +47,7 @@ class Signup extends Component {
                             <label>Last Name: </label>
                             <input
                                 type="text"
-                                name="name"
+                                name="lastName"
                                 placeholder="Your Last Name"
                                 onChange={this.handleChange}
                                 value={lastName}
@@ -76,5 +76,3 @@ class Signup extends Component {
         );
     }
 }
-
-export default Signup;
