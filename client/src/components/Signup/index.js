@@ -22,7 +22,7 @@ export default class Signup extends Component {
         debugger
         if (user) {
             this.props.onSignupSuccess()
-            this.props.history.push('/usersIndex');
+            this.props.history.push('/users');
             debugger
         }
     };

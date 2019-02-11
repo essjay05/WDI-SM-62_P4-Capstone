@@ -37,7 +37,7 @@ class App extends Component {
                     <Route exact path="/edit" render={(props) => {
                         return <FormInput {...props} currentUser={this.state.currentUser} />
                     }} />
-                    <Route exact path="/usersIndex" render={(props) => {
+                    <Route exact path="/users" render={(props) => {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
                     <Route exact path="/profile" render={(props) => {
