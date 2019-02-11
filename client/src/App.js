@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Resume from './components/Resume';
-import EditUserLogin from './components/EditUserLogin';
+import FormInput from './components/FormInput';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -34,8 +34,8 @@ class App extends Component {
                     <Route exact path="/login" render={(props) => {
                         return <Login {...props} onLoginSuccess={this.onAuthSuccess} />
                     }} />
-                    <Route exact path="/editLogin" render={(props) => {
-                        return <EditUserLogin {...props} currentUser={this.state.currentUser} />
+                    <Route exact path="/edit" render={(props) => {
+                        return <FormInput {...props} currentUser={this.state.currentUser} />
                     }} />
                     <Route exact path="/usersIndex" render={(props) => {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />

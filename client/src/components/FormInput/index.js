@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import httpClient from '../../utilities/httpClient';
 
-class Signup extends Component {
+class FormInput extends Component {
     state = {
         email: "",
         password: "",
         firstName: "",
-        lastName: ""
+        lastName: "",
+        resume: {
+            title: "",
+            city: "",
+            state: "",
+            country: "",
+            skills: "",
+            aboutuser: "",
+            linkedIn: "",
+            github: "",
+            website: ""
+        }
     }
 
     handleChange = (e) => {
@@ -76,4 +88,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default FormInput;
