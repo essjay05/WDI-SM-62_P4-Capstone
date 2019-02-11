@@ -2,34 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default ({ currentUser }) => {
-    return (
-        <nav className="nav clearfix column">
-            <div className="float-left">
-                <span className="nav-link">PORTfol10</span>
-                <Link className="nav-link" to="/"> Home </Link>
+export default ({ project }) => {
+    // async componentDidMount() {
+    //     let { currentUser, project } = this.props;
+    //     console.log(currentUser)
+    //     console.log(project)
+    //     console.log(this.props)
+    //     debugger
+    // }
+    // render () {
+    // let { project } = this.props;
+    console.log(project);
+    debugger
+        return (
+            <div className="project container">
+                <div>
+                    {/* <img src={project.image}>Image Box goes here</img> */}
+                </div>>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <h5>{project.techUsed}</h5>
+                <a href="{project.deployedLink}">Deployed Link</a>
+                <a href="{project.githubLink}">GitHub Link</a>
             </div>
-            <div className="float-right">
-            { currentUser
-            ? (
-                <div className="column column-50 column-offset-25">
-                    <span>
-                        <Link className="nav-link" to="/usersIndex"> Users Index </Link>
-                        <Link className="nav-link" to="/profile"> Profile </Link>
-                        <Link className="nav-link" to="/editLogin"> Edit Login </Link>
-                        <Link className="nav-link" to="/logout"> Logout </Link>
-                    </span>
-                </div>
-                )
-                : (
-                <div className="column column-50 column-offset-25">
-                    <span>
-                        <Link className="nav-link" to="/login"> Login </Link>
-                        <Link className="nav-link" to="/signup"> Signup </Link>
-                    </span>
-                </div>
-                )}
-                </div>
-        </nav>
-    )
+        )
+     
 };

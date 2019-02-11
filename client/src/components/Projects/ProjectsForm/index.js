@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AddProject from '../../AddProject';
 
 export default class Edit extends Component {
     

@@ -92,12 +92,13 @@ class Resume extends Component {
                     <h3>Project Boxes Go here</h3>
                     { projects.map(( project, i ) => {
                         return<div key={i}>
-                            <h5>{project.name}</h5>
+                            {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
-                            <Link className="nav-link" to="/editProject"> Edit Project </Link>
+                            <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
+                            <Projects currentUser={currentUser} project={project}/>
                             </div>
                     })}
-                    <Projects currentUser={currentUser} />
+                    
                 </div>
             </div>
         ) 

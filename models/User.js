@@ -9,7 +9,8 @@ const projectSchema = new mongoose.Schema ({
     description: { type: String },
     techUsed: { type: String },
     deployedLink: { type: String },
-    githubLink: { type: String }
+    githubLink: { type: String },
+    image: { type: String }
 })
 
 // User Schema
