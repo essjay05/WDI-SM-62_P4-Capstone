@@ -32,9 +32,9 @@ export default class Signup extends Component {
         let { currentUser } = this.props;
                 
         return (
-                <div>
-                { currentUser
-                ? (
+            <div>
+                {/* { currentUser
+                ? ( */}
                 <div>
                     <h1> Signup </h1>
                     <div className="row">
@@ -77,8 +77,8 @@ export default class Signup extends Component {
                         </div>
                     </div>
                 </div>    
-                ) : (
-                <div className="aboutBox container clearfix">
+                {/* ) : ( */}
+                {/* <div className="aboutBox container clearfix">
                     <div className="float-left">
                         <h1> PORT=fol10 </h1>
                         <h3>Showcase your projects here!</h3>
@@ -87,7 +87,7 @@ export default class Signup extends Component {
                         <p>Cupcake ipsum dolor. Sit amet cookie marzipan gummies sweet. Tart lollipop tiramisu sweet jelly halvah cookie. Gummi bears donut soufflé. Sweet roll cupcake chupa chups gummi bears lollipop. Macaroon cake cookie toffee tiramisu marzipan cookie powder. Apple pie danish icing cotton candy halvah liquorice chocolate cake marshmallow. Gummi bears oat cake sweet macaroon. Brownie pastry jujubes biscuit macaroon lemon drops powder.</p>
                     </div>
                 </div> 
-                )}
+                )} */}
             </div>
         );
     }
