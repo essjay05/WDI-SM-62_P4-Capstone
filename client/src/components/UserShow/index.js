@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../components/Project';
 import AddProject from '../../components/AddProject';
@@ -30,8 +30,8 @@ class UserShow extends Component {
     // } 
     async componentDidMount() {
         let { currentUser } = this.props
-        let { resume } = this.props.currentUser;
-        let { projects }  = this.props.currentUser.resume;
+        // let { resume } = this.props.currentUser;
+        // let { projects }  = this.props.currentUser.resume;
         debugger
         
         try {
@@ -94,7 +94,13 @@ class UserShow extends Component {
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Project project={project}/>
+                            <Project 
+                            key={i}
+                            currentUser={ currentUser }
+                            projects={projects}
+                            project={project}
+                            projectId={project._id}
+                            />
                             </div>
                     })}
                 </div>

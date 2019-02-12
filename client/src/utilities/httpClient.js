@@ -57,7 +57,7 @@ httpClient.addProject = async function (credentials, url) {
     try {
         let res = await this({ method: 'post', url, data: credentials })
         const user = res.data.payload
-
+        debugger
         if (user) {
             return httpClient.logout()
         }
@@ -71,7 +71,20 @@ httpClient.updateProject = async function (credentials, url) {
     try {
         let res = await this({ method: 'patch', url, data: credentials })
         const user = res.data.payload
-
+        debugger
+        if (user) {
+            return httpClient.logout()
+        }
+    } catch (err) {
+        console.log(err)
+    }
+}
+// DELETE project
+httpClient.deleteProject = async function (credentials, url) {
+    try {
+        let res = await this({ method: 'delete', url, data: credentials })
+        const user = res.data.payload
+        debugger
         if (user) {
             return httpClient.logout()
         }
@@ -85,7 +98,7 @@ httpClient.deleteUser = async function (credentials, url) {
     try {
         let res = await this({ method: 'delete', url, data: credentials })
         const user = res.data.payload
-
+        debugger
         if (user) {
             return httpClient.logout()
         }

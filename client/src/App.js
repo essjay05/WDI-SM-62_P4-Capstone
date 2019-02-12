@@ -8,8 +8,8 @@ import UserShow from './components/UserShow';
 import UsersShow from './components/UsersIndexContainer/UsersShow';
 import FormInput from './components/FormInput';
 import EditProject from './components/EditProject';
-import Project from './components/Project';
-import AddProject from './components/AddProject';
+// import Project from './components/Project';
+// import AddProject from './components/AddProject';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -51,24 +51,24 @@ class App extends Component {
 
                 {/* Edit Pages */}
                     <Route exact path="/edit" render={(props) => {
-                        return <FormInput {...props} currentUser={this.state.currentUser} />
+                        return <FormInput {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
                     }} />
                     <Route exact path="/editProject" render={(props) => {
-                        return <EditProject {...props} currentUser={this.state.currentUser} />
+                        return <EditProject {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
                     }} />
 
                 {/* User(s) Index/Show Pages */}
                     {/* Users Index (All users) */}
                     <Route exact path="/users" render={(props) => {
-                        return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
+                        return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess}/> : <Redirect to="/login" />
                     }} />
                     {/* Current User's profile */}
                     <Route exact path="/user" render={(props) => {
-                        return this.state.currentUser ? <UserShow {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
+                        return this.state.currentUser ? <UserShow {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess}/> : <Redirect to="/login" />
                     }} />
                     {/* Other users' profile */}
                     <Route exact path="/users/:id" render={(props) => {
-                        return this.state.currentUser ? <UsersShow {...props} /> : <Redirect to="/login" />
+                        return this.state.currentUser ? <UsersShow {...props} onLoginSuccess={this.onAuthSuccess} /> : <Redirect to="/login" />
                     }} />     
                 </Switch>
             </Layout>

@@ -4,10 +4,10 @@ import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 
 export default class Edit extends Component {
-        
+    
     state = {
-        currentUser: null,
-        project: null,
+        currentUser: this.props.currentUser,
+        project: this.props.currentUser.resume.projects._id,
         title: this.props.currentUser.resume.projects.title,
         image: this.props.currentUser.resume.projects.image,
         description: this.props.currentUser.resume.projects.description,
@@ -18,8 +18,10 @@ export default class Edit extends Component {
     }
 
     
-        // let { currentUser } = this.props;
-        // let { project } = this.props.currentUser.resume.projects._id
+    componentDidMount() {
+        debugger
+        let project = this.props.match.params
+    } 
     
 
     handleChange = (e) => {
@@ -27,19 +29,35 @@ export default class Edit extends Component {
         this.setState({ [name]: value });
     };
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         let { currentUser } = this.props
         let { project } = this.props.currentUser.resume.projects._id
-        httpClient.patch(`/api/users/${currentUser._id}/projects/${project._id}`, this.state)
-            .then( res => {
-                // debugger
-                this.props.history.push('/user');    
-            })
+        let user = await httpClient.updateProject(`/api/users/${currentUser._id}/projects/${project._id}`, this.state)
+            if (user) {
+                this.props.onLoginSuccess()
+                this.props.history.push('/user')
+            }
+    };
+
+    handleDelete = async (e) => {
+        e.preventDefault()
+        let { currentUser } = this.props
+        let { project } = this.props.currentUser.resume.projects._id
+        let user = await httpClient.deleteProject(`/api/users/${currentUser._id}/projects/${project._id}`, this.state)
+            if (user) {
+                this.props.logout()
+            }
     };
 
     render() {
-        let { project } = this.props.currentUser.resume.projects._id
+        console.log(this.props)
+        console.log(this.state)
+        // let{ i }= this.props.key;
+        // console.log(this.props)
+        let { project, i } = this.state.currentUser.resume.projects[i]
+        console.log(project)
+        debugger
         let { title, image, description, techUsed, deployedLink, githubLink } = project
         console.log(project);
         debugger
