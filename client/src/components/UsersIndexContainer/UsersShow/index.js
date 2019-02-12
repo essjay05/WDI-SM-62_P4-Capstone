@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../../components/Project';
 // import AddProject from '../../../components/AddProject';
+=======
+import React, { Component } from 'react';
+// import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Project from '../../../components/Project';
+>>>>>>> master
 import httpClient from '../../../utilities/httpClient';
 
 export default ({ user }) {

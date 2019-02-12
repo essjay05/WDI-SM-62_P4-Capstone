@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 // import UserLoginForm from './UserLoginForm';
 // import UserInfoForm from './UserInfoForm';
 // import UserSkillsForm from './UserSkillsForm';
@@ -12,6 +12,7 @@ class FormInput extends Component {
         password: "",
         firstName: this.props.currentUser.firstName,
         lastName: this.props.currentUser.lastName,
+<<<<<<< HEAD
         title: "",
         city: "",
         state: "",
@@ -19,6 +20,17 @@ class FormInput extends Component {
         linkedIn: "",
         github: "",
         website: "",
+=======
+        title: this.props.currentUser.resume.title,
+        city: this.props.currentUser.resume.city,
+        state: this.props.currentUser.resume.state,
+        country: this.props.currentUser.resume.country,
+        skills: this.props.currentUser.resume.skills,
+        aboutUser: this.props.currentUser.resume.aboutUser,
+        linkedIn: this.props.currentUser.resume.linkedIn,
+        github: this.props.currentUser.resume.github,
+        website: this.props.currentUser.resume.website,
+>>>>>>> master
         projects: this.props.currentUser.resume.projects
     }
 
@@ -27,31 +39,40 @@ class FormInput extends Component {
         this.setState({ [name]: value });
     };
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         let { currentUser } = this.props
         debugger
-        httpClient.patch(`/api/users/${currentUser._id}`, this.state)
-            .then(res => {
-                debugger 
-                this.props.history.push('/resume');   
-            })
-            // debugger
+        let user = httpClient.updateUser(`/api/users/${currentUser._id}`, this.state)
+            if (user) {
+                this.props.onLoginSuccess()
+                this.props.history.push('/user')
+                debugger
+            }
+            debugger
     };
 
-    handleDelete = (e) => {
+    handleDelete = async (e) => {
         e.preventDefault();
         let { currentUser } = this.props
-        axios.delete(`/api/users/${currentUser._id}`)
-            .then( res => {
-                this.props.history.push('/logout');
-            })
+        let user = httpClient.deleteUser(`/api/users/${currentUser._id}`, this.state)
+            if (user) {
+                debugger
+                this.props.logout()
+            }
     };
 
     render() {
+<<<<<<< HEAD
         let { currentUser } = this.props;
         let { email, password, firstName, lastName, city, state, country, linkedIn, website, github } = this.state;
         // debugger
+=======
+        // let { currentUser } = this.props;
+        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.props.currentUser.resume;
+        console.log(this.props.currentUser.resume)
+        debugger
+>>>>>>> master
         return (
             <div>
                 <h1> Edit Profile </h1>
@@ -144,10 +165,12 @@ class FormInput extends Component {
                                 value={github}
                                 onChange={this.handleChange}
                                 /> 
-            
-                            <input type="submit" />
+
+                            <div className="buttons">
+                                <input type="submit" />
+                                <button onClick={this.handleDelete}>Delete</button>
+                            </div>
                         </form>
-                        <button onClick={this.handleDelete}>Delete</button>
                     </div>
                 </div>
             </div>

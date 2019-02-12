@@ -61,8 +61,8 @@ export default class UsersIndexContainer extends Component {
                 <aside className="aspect-ratio"></aside>
                 <article>
                     <div>
+                        <Link className="nav-link" to="/user"> Your Profile </Link>
                         <h3>All Users Index List Goes Here</h3>
-                        <Link className="nav-link" to="/profile"> Profile </Link>
                         <ul>
                         { users.map((user, i) => {
                         return <div key={i}>
