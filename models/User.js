@@ -13,26 +13,28 @@ const projectSchema = new mongoose.Schema ({
     image: { type: String }
 })
 
+const resumeSchema = new mongoose.Schema ({
+    bannerImg: { type: String },
+    profileImg: { type: String },
+    title: { type: String },
+    city: { type: String },
+    state: { type: String},
+    country: {type: String },
+    skills: { type: String },
+    aboutUser: { type: String },
+    linkedIn: { type: String },
+    github: { type: String },
+    website: { type: String },
+    projects: [projectSchema]
+}, { timestamps: true })
+
 // User Schema
 const userSchema = new mongoose.Schema({
     firstName: { type: String },
     lastName: { type: String },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    resume: {
-        bannerImg: { type: String },
-        profileImg: { type: String },
-        title: { type: String },
-        city: { type: String },
-        state: { type: String},
-        country: {type: String },
-        skills: { type: String },
-        aboutUser: { type: String },
-        linkedIn: { type: String },
-        github: { type: String },
-        website: { type: String },
-        projects: [projectSchema]
-    }
+    resume: [resumeSchema]
 }, { timestamps: true })
 
 // Generate/bcrypt password
