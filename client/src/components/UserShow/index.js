@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../components/Project';
 import AddProject from '../../components/AddProject';
@@ -8,7 +8,7 @@ import httpClient from '../../utilities/httpClient';
 class UserShow extends Component {
     state = {
         projects:  [],
-        currentUser: null,
+        user: null,
         resume: null,
         loading: true
     }
@@ -33,8 +33,8 @@ class UserShow extends Component {
     }   
 
     render () {
-        let { user } = this.props;
-        let resume = this.props.user.resume;
+        let { user } = this.state
+        let resume = this.state.user.resume;
         let  projects  = this.props.user.resume.projects;
         console.log(user)
         debugger 
