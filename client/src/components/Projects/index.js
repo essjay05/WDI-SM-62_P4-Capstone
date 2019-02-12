@@ -4,17 +4,18 @@ import Project from '../Projects';
 
 
 export default class Projects extends Component {
-    async componentDidMount() {
-        let { currentUser, projects } = this.props;
-        console.log(currentUser)
-        console.log(projects)
-        console.log(this.props)
-        debugger
-    }
+    // async componentDidMount() {
+    //     let { currentUser, projects } = this.props;
+    //     console.log(currentUser)
+    //     console.log(projects)
+    //     console.log(this.props)
+    //     debugger
+    // }
     
     render () {
-    let { currentUser, projects } = this.props;
-    console.log(projects);
+    let { currentUser } = this.props;
+    console.log(currentUser.resume.projects);
+    let projects = currentUser.resume.projects
     debugger
         return (
             <div className="projects-container">

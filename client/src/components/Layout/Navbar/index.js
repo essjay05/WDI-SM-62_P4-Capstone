@@ -30,7 +30,7 @@ export default ({ currentUser }) => {
                     </span>
                 </div>
                 )}
-                </div>
+            </div>
         </nav>
     )
 };

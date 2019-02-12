@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from './components/Layout';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Resume from './components/Resume';
+import Profile from './components/Profile';
 import FormInput from './components/FormInput';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
@@ -41,7 +41,7 @@ class App extends Component {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
                     <Route exact path="/resume" render={(props) => {
-                        return this.state.currentUser ? <Resume {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
+                        return this.state.currentUser ? <Profile {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
                     <Route exact path="/logout" render={() => {
                         return <Logout logout={this.logout} />

@@ -60,32 +60,10 @@ class Resume extends Component {
                     </ul>
                 </div>
                 <div className="userBlurb-container">
-                    <p>About the User paragraph goes here</p>
+                    <p>About the User paragraph goes here:{resume.aboutUser}</p>
                 </div>
                 <div className="userSkills-container">
-                    <h3>User Skills list goes here</h3>
-                    <h5>Column 1 (5 skills/column)</h5>
-                    <ul>
-                    { resume.skills.map(( skill, i) =>
-                        <li key={i}>{skill}</li>
-                    )}
-                    </ul>
-                    <h5>Column 2 (5 skills/column)</h5>
-                    <ul>
-                        <li>Git</li>
-                        <li>MongoDB</li>
-                        <li>Node.js</li>
-                        <li>etc</li>
-                        <li>etc</li>
-                    </ul>
-                    <h5>Column 3 (5 skills/column)</h5>
-                    <ul>
-                        <li>Ruby</li>
-                        <li>Ruby on Rails</li>
-                        <li>PostgreSQL</li>
-                        <li>etc</li>
-                        <li>etc</li>
-                    </ul>
+                    <p>Resume Skills here:{resume.skills}</p>
                 </div>
                 <div className="projects-container">
                     <Link className="nav-link" to="/addProject"> Add Project </Link>
