@@ -21,6 +21,7 @@ httpClient.getCurrentUser = function() {
 httpClient.authenticate = async function(credentials, url) {
     try {
         let res = await this({ method: "post", url, data: credentials });
+        debugger
         const token = res.data.token;
         debugger
         if (token) {

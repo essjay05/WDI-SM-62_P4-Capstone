@@ -12,15 +12,6 @@ class FormInput extends Component {
         password: "",
         firstName: this.props.currentUser.firstName,
         lastName: this.props.currentUser.lastName,
-<<<<<<< HEAD
-        title: "",
-        city: "",
-        state: "",
-        country: "",
-        linkedIn: "",
-        github: "",
-        website: "",
-=======
         title: this.props.currentUser.resume.title,
         city: this.props.currentUser.resume.city,
         state: this.props.currentUser.resume.state,
@@ -30,7 +21,6 @@ class FormInput extends Component {
         linkedIn: this.props.currentUser.resume.linkedIn,
         github: this.props.currentUser.resume.github,
         website: this.props.currentUser.resume.website,
->>>>>>> master
         projects: this.props.currentUser.resume.projects
     }
 
@@ -63,16 +53,10 @@ class FormInput extends Component {
     };
 
     render() {
-<<<<<<< HEAD
-        let { currentUser } = this.props;
-        let { email, password, firstName, lastName, city, state, country, linkedIn, website, github } = this.state;
-        // debugger
-=======
         // let { currentUser } = this.props;
         let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.props.currentUser.resume;
         console.log(this.props.currentUser.resume)
         debugger
->>>>>>> master
         return (
             <div>
                 <h1> Edit Profile </h1>
