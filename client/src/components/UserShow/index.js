@@ -15,14 +15,14 @@ class UserShow extends Component {
     // Figure out how to load USERS array
 
     async componentDidMount() {
-        let { user } = this.props
+        let { currentUser } = this.props
         debugger
         
         try {
-            let { data: { payload } } = await httpClient.get(`/api/users/${user._id}`);
+            let { data: { payload } } = await httpClient.get(`/api/users/${currentUser._id}`);
             this.setState({ 
                 projects: payload.projects,
-                user: payload,
+                currentUser: payload,
                 resume: payload.resume,
                 loading: false 
             })
@@ -33,14 +33,14 @@ class UserShow extends Component {
     }   
 
     render () {
-        let { user } = this.state
-        let resume = this.state.user.resume;
-        let  projects  = this.props.user.resume.projects;
-        console.log(user)
+        let { currentUser } = this.state;
+        let  resume = this.props.currentUser.resume;
+        let  projects  = this.props.currentUser.resume.projects;
+        console.log(currentUser)
         debugger 
         return(
             <div className="resume-container">
-                <h1>{user.firstName} {user.lastName}'s Resume Form goes here</h1>
+                <h1>{currentUser.firstName} {currentUser.lastName}'s Resume Form goes here</h1>
                 <div>
                     <h3>Header/Hero Img upload goes here</h3>
                     {/* <img src="#">Hero Image</img> */}
@@ -57,7 +57,7 @@ class UserShow extends Component {
                 <div className="userContactLinks-container">
                     <h3>User Contact Links Section</h3>
                     <ul>
-                    <li><h5>{user.email}User Email</h5></li>
+                    <li><h5>{currentUser.email}User Email</h5></li>
                     <li><h5>{resume.linkedIn}User LinkedIn</h5></li>
                     <li><h5>{resume.website}User Personal Site</h5></li>
                     <li><h5>{resume.github}User GitHub</h5></li>
@@ -77,12 +77,12 @@ class UserShow extends Component {
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Project user={user} project={project}/>
+                            <Project currentUser={currentUser} project={project}/>
                             </div>
                     })}
                 </div>
 
-                <AddProject user={user} />
+                <AddProject currentUser={currentUser} />
             </div>
         ) 
     }
