@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Projects from '../../components/Projects';
+import AddProject from '../../components/Projects/AddProject';
 
 class Resume extends Component {
     state = {
@@ -26,7 +27,17 @@ class Resume extends Component {
             console.log(err);
             debugger
         }
-    }   
+    }  
+    
+    // Delete Project button:
+    handleDelete = (e) => {
+        e.preventDefault();
+        let { currentUser, project } = this.props
+        axios.delete(`/api/users/${currentUser._id}/`)
+            .then( res => {
+                this.props.history.push('/resume');
+            })
+    };
 
     render () {
         let { currentUser } = this.props;
@@ -67,17 +78,10 @@ class Resume extends Component {
                     <p> { currentUser.resume.skills } Skills here... </p>
                 </div>
                 <div className="projects-container">
-                    <Link className="nav-link" to="/addProject"> Add Project </Link>
-                    <h3>Project Boxes Go here</h3>
-                    { projects.map(( project, i ) => {
-                        return<div key={i}>
-                            {/* <h5>{project.name}</h5>
-                            <p>{project.description}</p>
-                            <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Projects currentUser={currentUser} project={project}/>
-                            </div>
-                    })}
-                    
+                    <Projects currentUser={currentUser} projects={projects} />
+                </div>
+                <div className="newProject-container">
+                    <AddProject currentUser={currentUser} />
                 </div>
             </div>
         ) 

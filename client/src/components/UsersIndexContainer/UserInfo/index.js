@@ -6,11 +6,10 @@ export default class UserInfo extends Component {
     state = {
         currentUser: null,
         user: null,
-        users: []
     }
 
     async componentDidMount() {
-        let { currentUser, users } = this.props;
+        let { currentUser } = this.props;
         try {
             let { data: { payload } } = await axios.get(`/api/users/${currentUser._id}`);
             console.log( payload )
@@ -30,7 +29,7 @@ export default class UserInfo extends Component {
                 <Link
                     className="nav-link"
                     user={ user }
-                    to={`/users/${user.id}`}>Link to User's Profile Page
+                    to={`/users/${user._id}`}>Link to User's Profile Page
                 </Link>
             </div>
         )

@@ -26,7 +26,7 @@ export default ({ currentUser }) => {
                 <div className="column column-50 column-offset-25">
                     <span>
                         <Link className="nav-link" to="/login"> Login </Link>
-                        <Link className="nav-link" to="/signup"> Signup </Link>
+                        <Link className="nav-link" to="/"> Signup </Link>
                     </span>
                 </div>
                 )}
