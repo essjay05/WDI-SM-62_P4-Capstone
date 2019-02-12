@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 
-export default class Edit extends Component {
+export default class EditProject extends Component {
     
     state = {
         currentUser: this.props.currentUser,
@@ -17,7 +17,6 @@ export default class Edit extends Component {
         projectId: this.props.currentUser.resume.projects._id
     }
 
-    
     componentDidMount() {
         debugger
         let project = this.props.match.params
