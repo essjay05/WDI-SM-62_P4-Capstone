@@ -4,6 +4,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import FormInput from './components/FormInput';
+import EditProject from './components/EditProject';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
 import { Switch, Route, Redirect } from 'react-router-dom';

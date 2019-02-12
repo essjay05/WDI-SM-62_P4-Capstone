@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Projects from '../../components/Projects';
+import Project from '../../components/Project';
+import AddProject from '../../components/AddProject';
 
 class Resume extends Component {
     state = {
@@ -73,11 +74,11 @@ class Resume extends Component {
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Projects currentUser={currentUser} project={project}/>
+                            <Project currentUser={currentUser} project={project}/>
                             </div>
                     })}
-                    
                 </div>
+                <AddProject currentUser={currentUser} />
             </div>
         ) 
     }

@@ -24,6 +24,7 @@ export default ({ project }) => {
                 <h5>{project.techUsed}</h5>
                 <a href="{project.deployedLink}">Deployed Link</a>
                 <a href="{project.githubLink}">GitHub Link</a>
+                <Link className="nav-link" to="/editProfile"> Edit Profile </Link>
             </div>
         )
      
