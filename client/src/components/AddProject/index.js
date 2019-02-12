@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 
 export default class Edit extends Component {
@@ -23,8 +24,7 @@ export default class Edit extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         let { currentUser } = this.props
-        debugger
-        axios.post(`/api/users/${currentUser._id}/projects`, this.state)
+        httpClient.post(`/api/users/${currentUser._id}/projects`, this.state)
             .then( res => {
                 // debugger
                 this.props.history.push('/resume');    
