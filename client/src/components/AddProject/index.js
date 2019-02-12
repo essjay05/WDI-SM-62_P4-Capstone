@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
+import { Redirect } from 'react-router-dom';
 
 export default class Edit extends Component {
     
@@ -27,7 +28,11 @@ export default class Edit extends Component {
         httpClient.post(`/api/users/${currentUser._id}/projects`, this.state)
             .then( res => {
                 // debugger
-                this.props.history.push('/resume');    
+                // this.props.history.push('/user');  
+                console.log(res) 
+                debugger
+                {/* <Redirect to="/user" />   */}
+                
 
             })
     };

@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 
 export default class Edit extends Component {
-    
+        
     state = {
-        resume: {
-            title: "",
-            image: "",
-            description: "",
-            techUsed: "",
-            deployedLink: "",
-            githubLink: "",
-            projectId: this.props.currentUser.resume.projects._id
-        }
+        currentUser: null,
+        project: null,
+        title: this.props.currentUser.resume.projects.title,
+        image: this.props.currentUser.resume.projects.image,
+        description: this.props.currentUser.resume.projects.description,
+        techUsed: this.props.currentUser.resume.projects.techUsed,
+        deployedLink: this.props.currentUser.resume.projects.deployedLink,
+        githubLink: this.props.currentUser.resume.projects.githubLink,
+        projectId: this.props.currentUser.resume.projects._id
     }
+
+    
+        // let { currentUser } = this.props;
+        // let { project } = this.props.currentUser.resume.projects._id
+    
 
     handleChange = (e) => {
         let { name, value } = e.target;
@@ -25,19 +30,22 @@ export default class Edit extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         let { currentUser } = this.props
-        httpClient.patch(`/api/users/${currentUser._id}/projects/:id`, this.state)
+        let { project } = this.props.currentUser.resume.projects._id
+        httpClient.patch(`/api/users/${currentUser._id}/projects/${project._id}`, this.state)
             .then( res => {
                 // debugger
                 this.props.history.push('/user');    
-
             })
     };
 
     render() {
-        let { title, image, description, techUsed, deployedLink, githubLink } = this.state;
+        let { project } = this.props.currentUser.resume.projects._id
+        let { title, image, description, techUsed, deployedLink, githubLink } = project
+        console.log(project);
+        debugger
         return (
             <div>
-                <h1> Upload a Project</h1>
+                <h1> Edit Your Project</h1>
                 <div className="row">
                     <div className="column column-50 column-offset-25">
                         <form onSubmit={this.handleSubmit}>
@@ -91,8 +99,12 @@ export default class Edit extends Component {
                                     onChange={this.handleChange}
                                     />
                             </div>  
-                            <input type="submit" />
+                            <div className="buttons">
+                                <input type="submit" />
+                                <button onClick={this.handleDelete}>Delete</button>
+                            </div>
                         </form>
+
                     </div>
                 </div>
             </div>

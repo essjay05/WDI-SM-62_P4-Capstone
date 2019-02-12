@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../../components/Project';
-import AddProject from '../../../components/AddProject';
 import httpClient from '../../../utilities/httpClient';
 
 class UsersShow extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../components/Project';
 import AddProject from '../../components/AddProject';
@@ -8,14 +8,30 @@ import httpClient from '../../utilities/httpClient';
 class UserShow extends Component {
     state = {
         projects:  [],
-        user: null,
+        currentUser: null,
+        users: [],
         resume: null,
         loading: true
     }
     // Figure out how to load USERS array
 
+    // componentDidMount () {
+    //     debugger
+    //     let { currentUser } = this.props;
+    //     httpClient.get(`/api/users/${currentUser._id}`)
+    //     .then(res => { 
+    //         this.setState({ users: res.data.response.users })
+    //     })
+    //     .catch(err => {
+    //         debugger
+    //     })
+    //     this.setState({ currentUser: this.props.currentUser})
+        
+    // } 
     async componentDidMount() {
         let { currentUser } = this.props
+        let { resume } = this.props.currentUser;
+        let { projects }  = this.props.currentUser.resume;
         debugger
         
         try {
@@ -33,10 +49,11 @@ class UserShow extends Component {
     }   
 
     render () {
-        let { currentUser } = this.state;
-        let  resume = this.props.currentUser.resume;
-        let  projects  = this.props.currentUser.resume.projects;
+        let { currentUser } = this.props;
+        let { resume } = currentUser;
+        let { projects } = resume;
         console.log(currentUser)
+        // console.log(this.state)
         debugger 
         return(
             <div className="resume-container">
@@ -77,7 +94,7 @@ class UserShow extends Component {
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Project currentUser={currentUser} project={project}/>
+                            <Project project={project}/>
                             </div>
                     })}
                 </div>

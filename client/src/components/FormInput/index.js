@@ -12,16 +12,16 @@ class FormInput extends Component {
         password: "",
         firstName: this.props.currentUser.firstName,
         lastName: this.props.currentUser.lastName,
-            title: "",
-            city: "",
-            state: "",
-            country: "",
-            skills: "",
-            aboutuser: "",
-            linkedIn: "",
-            github: "",
-            website: "",
-            projects: this.props.currentUser.resume.projects
+        title: this.props.currentUser.resume.title,
+        city: this.props.currentUser.resume.city,
+        state: this.props.currentUser.resume.state,
+        country: this.props.currentUser.resume.country,
+        skills: this.props.currentUser.resume.skills,
+        aboutUser: this.props.currentUser.resume.aboutUser,
+        linkedIn: this.props.currentUser.resume.linkedIn,
+        github: this.props.currentUser.resume.github,
+        website: this.props.currentUser.resume.website,
+        projects: this.props.currentUser.resume.projects
     }
 
     handleChange = (e) => {
@@ -51,8 +51,8 @@ class FormInput extends Component {
     };
 
     render() {
-        let { currentUser } = this.props;
-        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
+        // let { currentUser } = this.props;
+        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.props.currentUser.resume;
         // debugger
         return (
             <div>
@@ -172,10 +172,12 @@ class FormInput extends Component {
                                 value={github}
                                 onChange={this.handleChange}
                                 /> 
-            
-                            <input type="submit" />
+
+                            <div className="buttons">
+                                <input type="submit" />
+                                <button onClick={this.handleDelete}>Delete</button>
+                            </div>
                         </form>
-                        <button onClick={this.handleDelete}>Delete</button>
                     </div>
                 </div>
             </div>
