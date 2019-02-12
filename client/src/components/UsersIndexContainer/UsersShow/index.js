@@ -1,34 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../../components/Project';
-import AddProject from '../../../components/AddProject';
+// import AddProject from '../../../components/AddProject';
 import httpClient from '../../../utilities/httpClient';
 
-class UsersShow extends Component {
-    state = {
-        projects:  [],
-        currentUser: null,
-        loading: true
-    }
+export default ({ user }) {
+    // state = {
+    //     projects:  [],
+    //     currentUser: null,
+    //     loading: true
+    // }
     // Figure out how to load USERS array
 
-    async componentDidMount() {
-        let { user } = this.props
-        debugger
+    // async componentDidMount() {
+    //     let { user } = this.props
+    //     debugger
         
-        try {
-            let { data: { payload } } = await httpClient.get(`/api/users/${user._id}`);
-            this.setState({ 
-                projects: payload.projects,
-                user: payload, 
-                loading: false 
-            })
-            } catch(err) {
-            console.log(err);
-            debugger
-        }
-    }   
+    //     try {
+    //         let { data: { payload } } = await httpClient.get(`/api/users/${user._id}`);
+    //         this.setState({ 
+    //             projects: payload.projects,
+    //             user: payload, 
+    //             loading: false 
+    //         })
+    //         } catch(err) {
+    //         console.log(err);
+    //         debugger
+    //     }
+    // }   
 
     render () {
         let { user } = this.props;

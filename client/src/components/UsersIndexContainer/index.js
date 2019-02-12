@@ -56,6 +56,7 @@ export default class UsersIndexContainer extends Component {
         return (
             <div className="grid usersIndexContainer">
                 <h1>Hello, {currentUser.firstName}!</h1>
+                <Link className="nav-link" to={`/users/${currentUser._id}`}> Your Profile Page...</Link>
                 <h3 className="usersIndexTitle">List of All Users</h3>
                 <aside className="aspect-ratio"></aside>
                 <article>

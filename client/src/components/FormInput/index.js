@@ -12,16 +12,14 @@ class FormInput extends Component {
         password: "",
         firstName: this.props.currentUser.firstName,
         lastName: this.props.currentUser.lastName,
-            title: "",
-            city: "",
-            state: "",
-            country: "",
-            skills: "",
-            aboutuser: "",
-            linkedIn: "",
-            github: "",
-            website: "",
-            projects: this.props.currentUser.resume.projects
+        title: "",
+        city: "",
+        state: "",
+        country: "",
+        linkedIn: "",
+        github: "",
+        website: "",
+        projects: this.props.currentUser.resume.projects
     }
 
     handleChange = (e) => {
@@ -52,7 +50,7 @@ class FormInput extends Component {
 
     render() {
         let { currentUser } = this.props;
-        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
+        let { email, password, firstName, lastName, city, state, country, linkedIn, website, github } = this.state;
         // debugger
         return (
             <div>
@@ -118,32 +116,6 @@ class FormInput extends Component {
                                 name="country"
                                 placeholder="Your Country"
                                 value={country}
-                                onChange={this.handleChange}
-                                />
-                            <label>Title: </label>
-                            <input 
-                                type="text"
-                                name="title"
-                                placeholder="Job Title"
-                                value={title}
-                                onChange={this.handleChange}
-                                />
-                           
-                        <h1> User About Section</h1>
-                            <label>About: </label>
-                            <input
-                                type="text"
-                                name="aboutUser"
-                                placeholder="Write a brief paragraph describing yourself..."
-                                value={aboutUser}
-                                onChange={this.handleChange}
-                                />
-                            <label>Skills </label>
-                            <input
-                                type="text"
-                                name="skills"
-                                placeholder="Type in a list of your skills separated out by a comma (ie. Html, CSS, JavaScript)"
-                                value={skills}
                                 onChange={this.handleChange}
                                 />
                            
