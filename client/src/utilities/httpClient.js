@@ -21,6 +21,10 @@ httpClient.getCurrentUser = function() {
 httpClient.authenticate = async function(credentials, url) {
     try {
         let res = await this({ method: "post", url, data: credentials });
+<<<<<<< HEAD
+=======
+        console.log(res.data)
+>>>>>>> form-submit
         debugger
         const token = res.data.token;
         debugger
