@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
-import FormInput from './components/FormInput';
+import EditUserForm from './components/EditUserForm';
 import EditProject from './components/EditProject';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
@@ -36,7 +36,7 @@ class App extends Component {
                         return <Login {...props} onLoginSuccess={this.onAuthSuccess} />
                     }} />
                     <Route exact path="/edit" render={(props) => {
-                        return <FormInput {...props} currentUser={this.state.currentUser} />
+                        return <EditUserForm {...props} currentUser={this.state.currentUser} />
                     }} />
                     <Route exact path="/users" render={(props) => {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
