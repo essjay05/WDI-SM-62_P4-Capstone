@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Project from '../../components/Project';
-import AddProject from '../../components/AddProject';
+import Project from '../../../components/Project';
+import AddProject from '../../../components/AddProject';
+import httpClient from '../../../utilities/httpClient';
 
-class Resume extends Component {
+class UsersShow extends Component {
     state = {
         projects:  [],
         currentUser: null,
@@ -13,11 +14,11 @@ class Resume extends Component {
     // Figure out how to load USERS array
 
     async componentDidMount() {
-        let { currentUser } = this.props
+        let { user } = this.props
         debugger
         
         try {
-            let { data: { payload } } = await axios.get(`/api/users/${currentUser._id}`);
+            let { data: { payload } } = await httpClient.get(`/api/users/${user._id}`);
             this.setState({ 
                 projects: payload.projects,
                 user: payload, 
@@ -30,14 +31,14 @@ class Resume extends Component {
     }   
 
     render () {
-        let { currentUser } = this.props;
-        let resume = this.props.currentUser.resume;
-        let  projects  = this.props.currentUser.resume.projects;
-        console.log(currentUser)
+        let { user } = this.props;
+        let resume = this.props.user.resume;
+        let  projects  = this.props.user.resume.projects;
+        console.log(user)
         debugger 
         return(
             <div className="resume-container">
-                <h1>{currentUser.firstName} {currentUser.lastName}'s Resume Form goes here</h1>
+                <h1>{user.firstName} {user.lastName}'s Resume Form goes here</h1>
                 <div>
                     <h3>Header/Hero Img upload goes here</h3>
                     {/* <img src="#">Hero Image</img> */}
@@ -54,7 +55,7 @@ class Resume extends Component {
                 <div className="userContactLinks-container">
                     <h3>User Contact Links Section</h3>
                     <ul>
-                    <li><h5>{currentUser.email}User Email</h5></li>
+                    <li><h5>{user.email}User Email</h5></li>
                     <li><h5>{resume.linkedIn}User LinkedIn</h5></li>
                     <li><h5>{resume.website}User Personal Site</h5></li>
                     <li><h5>{resume.github}User GitHub</h5></li>
@@ -74,14 +75,14 @@ class Resume extends Component {
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Project currentUser={currentUser} project={project}/>
+                            <Project user={user} project={project}/>
                             </div>
                     })}
                 </div>
-                <AddProject currentUser={currentUser} />
+
             </div>
         ) 
     }
 }
 
-export default Resume;
+export default UsersShow;

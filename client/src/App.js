@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Layout from './components/Layout';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Profile from './components/Profile';
+import UserShow from './components/UserShow';
 import FormInput from './components/FormInput';
-import EditProject from './components/EditProject';
+// import EditProject from './components/EditProject';
+// import Project from './components/Project';
+// import AddProject from './components/AddProject';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -41,9 +43,13 @@ class App extends Component {
                     <Route exact path="/users" render={(props) => {
                         return this.state.currentUser ? <UsersIndexContainer {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
-                    <Route exact path="/resume" render={(props) => {
-                        return this.state.currentUser ? <Profile {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
+                    <Route exact path="/user" render={(props) => {
+                        return this.state.currentUser ? <UserShow {...props} currentUser={this.state.currentUser}/> : <Redirect to="/login" />
                     }} />
+                    <Route exact path="/users/:id" render={(props) => {
+                        return this.state.currentUser ? <UserShow {...props} /> : <Redirect to="/login" />
+                    }} />
+                        
                     <Route exact path="/logout" render={() => {
                         return <Logout logout={this.logout} />
                     }} />

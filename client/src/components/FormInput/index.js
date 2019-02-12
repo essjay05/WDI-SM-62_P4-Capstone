@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import UserLoginForm from './UserLoginForm';
-import UserInfoForm from './UserInfoForm';
-import UserSkillsForm from './UserSkillsForm';
-import UserContactsForm from './UserContactsForm';
+// import UserLoginForm from './UserLoginForm';
+// import UserInfoForm from './UserInfoForm';
+// import UserSkillsForm from './UserSkillsForm';
+// import UserContactsForm from './UserContactsForm';
 import httpClient from '../../utilities/httpClient';
 
 class FormInput extends Component {
     state = {
-        email: "",
+        email: this.props.currentUser.email,
         password: "",
-        firstName: "",
-        lastName: "",
-        resume: {
+        firstName: this.props.currentUser.firstName,
+        lastName: this.props.currentUser.lastName,
             title: "",
             city: "",
             state: "",
@@ -21,8 +20,8 @@ class FormInput extends Component {
             aboutuser: "",
             linkedIn: "",
             github: "",
-            website: ""
-        }
+            website: "",
+            projects: this.props.currentUser.resume.projects
     }
 
     handleChange = (e) => {
@@ -54,7 +53,7 @@ class FormInput extends Component {
     render() {
         let { currentUser } = this.props;
         let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
-        debugger
+        // debugger
         return (
             <div>
                 <h1> Edit Profile </h1>
@@ -62,34 +61,117 @@ class FormInput extends Component {
                     <div className="column column-50 column-offset-25">
                         <form onSubmit={this.handleSubmit}>
 
-                            <UserLoginForm 
-                                currentUser={currentUser} 
-                                firstName={firstName}
-                                lastName={lastName}
-                                email={email}
-                                password={password}
-                                onChange={this.handleChange} /> 
+                        <h1>User Login Info</h1> 
+                            <label>First Name: </label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                placeholder="Your First Name"
+                                value={firstName}
+                                onChange={this.handleChange}
+                                />
+                            <label>Last Name: </label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                placeholder="Your Last Name"
+                                value={lastName}
+                                onChange={this.handleChange}
+                                />
+                            <label>Email: </label>
+                            <input 
+                                type="text"
+                                name="email"
+                                placeholder="Your Email"
+                                value={email}
+                                onChange={this.handleChange}
+                                />
+                            <label>Password: </label>
+                            <input 
+                                type="password"
+                                name="password"
+                                placeholder="Secret password here..."
+                                value={password}
+                                onChange={this.handleChange}
+                                />  
                           
-                            <UserInfoForm 
-                                currentUser={currentUser} 
-                                city={city}
-                                state={state}
-                                country={country}
-                                title={title}
-                                onChange={this.handleChange} /> 
+                        <h1> User Info</h1>
+                            <label>City: </label>
+                            <input
+                                type="text"
+                                name="city"
+                                placeholder="Your City"
+                                value={city}
+                                onChange={this.handleChange}
+                                />
+                            <label>State: </label>
+                            <input
+                                type="text"
+                                name="state"
+                                placeholder="Your State"
+                                value={state}
+                                onChange={this.handleChange}
+                                />
+                            <label>Country: </label>
+                            <input 
+                                type="text"
+                                name="country"
+                                placeholder="Your Country"
+                                value={country}
+                                onChange={this.handleChange}
+                                />
+                            <label>Title: </label>
+                            <input 
+                                type="text"
+                                name="title"
+                                placeholder="Job Title"
+                                value={title}
+                                onChange={this.handleChange}
+                                />
                            
-                            <UserSkillsForm 
-                                currentUser={currentUser} 
-                                aboutUser={aboutUser}
-                                skills={skills}
-                                onChange={this.handleChange} /> 
+                        <h1> User About Section</h1>
+                            <label>About: </label>
+                            <input
+                                type="text"
+                                name="aboutUser"
+                                placeholder="Write a brief paragraph describing yourself..."
+                                value={aboutUser}
+                                onChange={this.handleChange}
+                                />
+                            <label>Skills </label>
+                            <input
+                                type="text"
+                                name="skills"
+                                placeholder="Type in a list of your skills separated out by a comma (ie. Html, CSS, JavaScript)"
+                                value={skills}
+                                onChange={this.handleChange}
+                                />
                            
-                            <UserContactsForm 
-                                currentUser={currentUser} 
-                                linkedIn={linkedIn}
-                                website={website}
-                                github={github}
-                                onChange={this.handleChange} /> 
+                        <h1> User Contact Links</h1>
+                            <label>LinkedIn: </label>
+                            <input
+                                type="text"
+                                name="linkedIn"
+                                placeholder="Your LinkedIn"
+                                value={linkedIn}
+                                onChange={this.handleChange}
+                                />
+                            <label>Personal Website: </label>
+                            <input
+                                type="text"
+                                name="website"
+                                placeholder="Your Website"
+                                value={website}
+                                onChange={this.handleChange}
+                                />
+                            <label>GitHub: </label>
+                            <input 
+                                type="text"
+                                name="github"
+                                placeholder="Your GitHub"
+                                value={github}
+                                onChange={this.handleChange}
+                                /> 
             
                             <input type="submit" />
                         </form>
