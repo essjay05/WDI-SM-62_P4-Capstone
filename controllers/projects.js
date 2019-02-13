@@ -70,7 +70,7 @@ module.exports = {
                 // user.projects.id(p)
                 let projIndex = user.projects.indexOf(proj_id)
                 console.log(projIndex)
-                user.resume.projects.splice(projIndex, 1)
+                user.projects.splice(projIndex, 1)
                 user.save(err => {
                     if (err) res.json({ success: false, err })
                     res.json({ success: true, message: 'Project has been deleted.'})

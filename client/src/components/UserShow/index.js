@@ -44,14 +44,16 @@ class UserShow extends Component {
         }
     }
 
-    handleDelete = async (e) => {
+    handleDeleteProject = (e) => {
         e.preventDefault();
-        let { currentUser } = this.props
-        let user = httpClient.deleteProject(`/api/users/${currentUser._id}/${this.project._id}`, this.state)
-            if (user) {
-                debugger
-                this.props.logout()
-            }
+        debugger
+        axios.delete(`/api/users/${this.props.currentUser._id}/projects/${e.target.target}`, this.state)
+        .then(res => {
+            console.log(res)
+            debugger
+            // this.setState({ user: res.data.updatedUser})
+            this.props.history.push('/users');
+        })
     };
 
     render () {
@@ -107,7 +109,9 @@ class UserShow extends Component {
                             project={project}
                             projectId={project._id}
                             />
-                            <button onClick={this.handleDelete}>Delete</button>
+                            <form onSubmit={this.handleDeleteProject} target={project._id}>
+                                <input className="btn-danger" value="Delete Project" type="submit"/>
+                            </form>
                             </div>
                     })}
                 </div>
