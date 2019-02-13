@@ -31,6 +31,10 @@ app.use(flash());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
+// Serve up static assets (for Heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 // ROUTES
 app.get('/api', (req, res) => {
