@@ -34,7 +34,7 @@ export default class UserInfo extends Component {
                 <Link
                     className="nav-link"
                     user={ user }
-                    userId={ user._id }
+                    userid={ user._id }
                     to={`/users/${user._id}`}>{user.firstName} {user.lastName}'s Profile Page
                 </Link>   
             </div>
