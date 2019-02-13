@@ -6,10 +6,10 @@ import Login from './components/Login';
 import UserShow from './components/UserShow';
 // other users' show profile/resume page
 import UsersShow from './components/UsersIndexContainer/UsersShow';
-import FormInput from './components/FormInput';
+import EditUser from './components/EditUser';
 import EditProject from './components/EditProject';
 // import Project from './components/Project';
-// import AddProject from './components/AddProject';
+import AddProject from './components/AddProject';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -51,10 +51,13 @@ class App extends Component {
 
                 {/* Edit Pages */}
                     <Route exact path="/edit" render={(props) => {
-                        return <FormInput {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
+                        return <EditUser {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
                     }} />
                     <Route exact path="/editProject" render={(props) => {
                         return <EditProject {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
+                    }} />
+                    <Route exact path="/addProject" render={(props) => {
+                        return <AddProject {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
                     }} />
 
                 {/* User(s) Index/Show Pages */}
