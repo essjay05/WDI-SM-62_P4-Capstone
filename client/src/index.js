@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
-import 'milligram';
+// import 'milligram'; UNINSTALLED IN FAVOR OF SEMANTIC UI
 
 const Root = () => (
     <Router>

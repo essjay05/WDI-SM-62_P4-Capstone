@@ -49,7 +49,66 @@ PAIRING 10:
     font-family: 'Montserrat', sans-serif;
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
 */
-
+h1, h2 {
+    color: white;
+    font-family: 'Bree Serif', serif;
+  
+  }
+  h3, h5, a, p {
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* text-transform: uppercase; */
+    margin-bottom: -1rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-kerning: 1.75rem;
+  }
+  
+  #nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 2rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .aboutBox {
+    color: white;
+    background-color: rgba(0, 0, 0, .65);
+    margin: 15rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .nav-link:link {
+    color: #ffff;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    text-decoration: none;
+  }
+  .nav-link:visited {
+    color: #fff;
+  }
+  .nav-link:hover {
+    color: goldenrod;
+  }
+  .nav-link:active {
+    color: goldenrod;
+  }
+  
+  .activeRoute {
+    background-color: goldenrod;
+    border-bottom: 0.4rem solid goldenrod;
+    cursor: not-allowed;
+  }
+  
 
 body {
     margin: 0;
@@ -59,6 +118,12 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: url("https://i.imgur.com/oU9cx4w.jpg");
+    background-size: cover; 
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 code {
