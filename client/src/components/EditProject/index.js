@@ -118,7 +118,7 @@ export default class Edit extends Component {
                                     />
                             </div>  
                             <div className="buttons">
-                                <input type="submit" />
+                                <input className="ui inverted green button" type="submit" />
                                 <button className="ui inverted red button" onClick={this.handleDelete}>Delete</button>
                             </div>
                         </form>

@@ -176,8 +176,8 @@ class FormInput extends Component {
                                 /> 
 
                             <div className="buttons">
-                                <input className="ui button" type="submit" />
-                                <button className="ui button" onClick={this.handleDelete}>Delete</button>
+                                <input className="ui inverted green button" type="submit" />
+                                <button className="ui inverted red button" onClick={this.handleDelete}>Delete</button>
                             </div>
                         </form>
                     </div>

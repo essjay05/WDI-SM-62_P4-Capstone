@@ -89,7 +89,7 @@ export default class AddProject extends Component {
                                     onChange={this.handleChange}
                                     />
                             </div>  
-                            <input className="ui button" type="submit" />
+                            <input className="ui inverted green button" type="submit" />
                         </form>
                     </div>
                 </div>
