@@ -8,6 +8,7 @@ export default class UsersIndexContainer extends Component {
     state = {
         users:  [],
         currentUser: null,
+        user: null,
         loading: true
     }
     // Figure out how to load USERS array
@@ -22,7 +23,8 @@ export default class UsersIndexContainer extends Component {
             .catch(err => {
                 debugger
             })
-            this.setState({ currentUser: this.props.currentUser })
+            this.setState({ user: this.props.currentUser })
+            debugger
     }
 
     // async componentDidMount() {
@@ -51,11 +53,11 @@ export default class UsersIndexContainer extends Component {
     // }
 
     render() {
-        let { users } = this.state;
+        let { users} = this.state;
         let { currentUser } = this.props;
         return (
             <div className="grid usersIndexContainer">
-                <h1>Hello, {currentUser.firstName}!</h1>
+                {/* <h1>Hello, {currentUser.firstName}!</h1> */}
                 <h3 className="usersIndexTitle">List of All Users</h3>
                 <aside className="aspect-ratio"></aside>
                 <article>

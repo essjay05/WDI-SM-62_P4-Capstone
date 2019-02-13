@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 // import UserLoginForm from './UserLoginForm';
 // import UserInfoForm from './UserInfoForm';
 // import UserSkillsForm from './UserSkillsForm';
@@ -12,28 +12,29 @@ class FormInput extends Component {
         password: "",
         firstName: this.props.currentUser.firstName,
         lastName: this.props.currentUser.lastName,
-        title: this.props.currentUser.resume.title,
-        city: this.props.currentUser.resume.city,
-        state: this.props.currentUser.resume.state,
-        country: this.props.currentUser.resume.country,
-        skills: this.props.currentUser.resume.skills,
-        aboutUser: this.props.currentUser.resume.aboutUser,
-        linkedIn: this.props.currentUser.resume.linkedIn,
-        github: this.props.currentUser.resume.github,
-        website: this.props.currentUser.resume.website,
-        projects: this.props.currentUser.resume.projects
+        title: this.props.currentUser.title,
+        city: this.props.currentUser.city,
+        state: this.props.currentUser.state,
+        country: this.props.currentUser.country,
+        skills: this.props.currentUser.skills,
+        aboutUser: this.props.currentUser.aboutUser,
+        linkedIn: this.props.currentUser.linkedIn,
+        github: this.props.currentUser.github,
+        website: this.props.currentUser.website,
+        projects: this.props.currentUser.projects
     }
 
     handleChange = (e) => {
         let { name, value } = e.target;
+        // debugger
         this.setState({ [name]: value });
     };
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        let { currentUser } = this.props
+        // let { currentUser } = this.props
         debugger
-        let user = httpClient.updateUser(`/api/users/${currentUser._id}`, this.state)
+        let user = axios.patch(`/api/users/${this.props.currentUser._id}`, this.state)
             if (user) {
                 this.props.onLoginSuccess()
                 this.props.history.push('/user')
@@ -54,9 +55,9 @@ class FormInput extends Component {
 
     render() {
         // let { currentUser } = this.props;
-        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.props.currentUser.resume;
-        console.log(this.props.currentUser.resume)
-        debugger
+        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
+        console.log(this.props.user)
+        // debugger
         return (
             <div>
                 <h1> Edit Profile </h1>

@@ -24,8 +24,10 @@ const
             })
         },
         update: (req, res) => {
+            console.log(req.params)
             User.findById(req.params.id, (err, updatedUser) => {
                 if (!req.body.password) delete req.body.password
+                console.log(res.data)
                 Object.assign(updatedUser, req.body)
                 updatedUser.save(( err, updatedUser ) => {
                     if (err) res.json({ success: false, payload: null, code: err.code })

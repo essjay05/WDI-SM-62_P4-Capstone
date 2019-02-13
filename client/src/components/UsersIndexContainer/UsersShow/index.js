@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../../components/Project';
-import httpClient from '../../../utilities/httpClient';
+// import httpClient from '../../../utilities/httpClient';
 
 class UsersShow extends Component {
     state = {
         projects:  [],
-        currentUser: null,
+        // currentUser: null,
         loading: true
     }
     // Figure out how to load USERS array
 
     async componentDidMount() {
         let { user } = this.props
+        // let { resume } = this.props.currentUser;
+        // let { projects }  = this.props.currentUser.resume;
+        console.log(user)
+        console.log(this.props)
         debugger
         
         try {
-            let { data: { payload } } = await httpClient.get(`/api/users/${user._id}`);
+            let { data: { payload } } = await axios.get(`/api/users/${this.props.match.params.id}`);
             this.setState({ 
                 projects: payload.projects,
-                user: payload, 
+                user: payload,
                 loading: false 
             })
-            } catch(err) {
+        } catch(err) {
             console.log(err);
             debugger
         }
-    }   
+    } 
 
     render () {
-        let { user } = this.props;
-        let resume = this.props.user.resume;
-        let  projects  = this.props.user.resume.projects;
+        let { user, loading, projects } = this.state;
+        // let  { projects }  = this.props.user;
         console.log(user)
         debugger 
+        if (loading) return<div></div>
         return(
             <div className="resume-container">
                 <h1>{user.firstName} {user.lastName}'s Resume Form goes here</h1>
@@ -46,25 +50,25 @@ class UsersShow extends Component {
                     <h3>UserInfo section goes here: </h3>
                     <ul>
                         {/* <li><img src="#">User Profile image Here</img></li> */}
-                        <li>{resume.city}, {resume.state}, {resume.country}</li>
-                        <li>{resume.tagLine} User Tagline/1-liner here</li>
-                        <li>User job title here: {resume.title}</li>    
+                        <li>{user.city}, {user.state}, {user.country}</li>
+                        <li>{user.tagLine} User Tagline/1-liner here</li>
+                        <li>User job title here: {user.title}</li>    
                     </ul>
                 </div>
                 <div className="userContactLinks-container">
                     <h3>User Contact Links Section</h3>
                     <ul>
                     <li><h5>{user.email}User Email</h5></li>
-                    <li><h5>{resume.linkedIn}User LinkedIn</h5></li>
-                    <li><h5>{resume.website}User Personal Site</h5></li>
-                    <li><h5>{resume.github}User GitHub</h5></li>
+                    <li><h5>{user.linkedIn}User LinkedIn</h5></li>
+                    <li><h5>{user.website}User Personal Site</h5></li>
+                    <li><h5>{user.github}User GitHub</h5></li>
                     </ul>
                 </div>
                 <div className="userBlurb-container">
-                    <p>About the User paragraph goes here:{resume.aboutUser}</p>
+                    <p>About the User paragraph goes here:{user.aboutUser}</p>
                 </div>
                 <div className="userSkills-container">
-                    <p>Resume Skills here:{resume.skills}</p>
+                    <p>Resume Skills here:{user.skills}</p>
                 </div>
                 <div className="projects-container">
                     <Link className="nav-link" to="/addProject"> Add Project </Link>

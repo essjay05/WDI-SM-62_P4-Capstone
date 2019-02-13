@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../components/Project';
-import httpClient from '../../utilities/httpClient';
+// import httpClient from '../../utilities/httpClient';
 
 class UserShow extends Component {
     state = {
