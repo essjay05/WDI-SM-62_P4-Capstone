@@ -47,13 +47,13 @@ class Resume extends Component {
         debugger 
         return(
             <div className="resume-container">
-                <h1>{currentUser.firstName} {currentUser.lastName}'s Resume Form goes here</h1>
+                <h1 className="page-header">{currentUser.firstName} {currentUser.lastName}'s Resume Form goes here</h1>
                 <div>
                     <h3>Header/Hero Img upload goes here</h3>
                     {/* <img src="#">Hero Image</img> */}
                 </div>
                 <div className="userInfo-container">
-                    <h3>UserInfo section goes here: </h3>
+                    <h3 className="section-header">UserInfo section goes here: </h3>
                     <ul>
                         {/* <li><img src="#">User Profile image Here</img></li> */}
                         <li>{resume.city}, {resume.state}, {resume.country}</li>
@@ -62,7 +62,7 @@ class Resume extends Component {
                     </ul>
                 </div>
                 <div className="userContactLinks-container">
-                    <h3>User Contact Links Section</h3>
+                    <h3  className="section-header">User Contact Links Section</h3>
                     <ul>
                     <li><h5>{currentUser.email}User Email</h5></li>
                     <li><h5>{resume.linkedIn}User LinkedIn</h5></li>
@@ -74,7 +74,7 @@ class Resume extends Component {
                     <p>About the User paragraph goes here</p>
                 </div>
                 <div className="userSkills-container">
-                    <h3>User Skills list goes here</h3>
+                    <h3  className="section-header">User Skills list goes here</h3>
                     <p> { currentUser.resume.skills } Skills here... </p>
                 </div>
                 <div className="projects-container">

@@ -58,12 +58,12 @@ class FormInput extends Component {
         // debugger
         return (
             <div>
-                <h1> Edit Profile </h1>
+                <h1 className="page-header"> Edit Profile </h1>
                 <div className="row">
                     <div className="column column-50 column-offset-25">
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleSubmit} className="ui form">
 
-                        <h1>User Login Info</h1> 
+                        <h1 className="section-header">User Login Info</h1> 
                             <label>First Name: </label>
                             <input
                                 type="text"
@@ -97,7 +97,7 @@ class FormInput extends Component {
                                 onChange={this.handleChange}
                                 />  
                           
-                        <h1> User Info</h1>
+                        <h1 className="section-header"> User Info</h1>
                             <label>City: </label>
                             <input
                                 type="text"
@@ -131,7 +131,7 @@ class FormInput extends Component {
                                 onChange={this.handleChange}
                                 />
                            
-                        <h1> User About Section</h1>
+                        <h1 className="section-header"> User About Section</h1>
                             <label>About: </label>
                             <input
                                 type="text"
@@ -149,7 +149,7 @@ class FormInput extends Component {
                                 onChange={this.handleChange}
                                 />
                            
-                        <h1> User Contact Links</h1>
+                        <h1 className="section-header"> User Contact Links</h1>
                             <label>LinkedIn: </label>
                             <input
                                 type="text"
@@ -176,8 +176,8 @@ class FormInput extends Component {
                                 /> 
 
                             <div className="buttons">
-                                <input type="submit" />
-                                <button onClick={this.handleDelete}>Delete</button>
+                                <input className="ui button" type="submit" />
+                                <button className="ui button" onClick={this.handleDelete}>Delete</button>
                             </div>
                         </form>
                     </div>

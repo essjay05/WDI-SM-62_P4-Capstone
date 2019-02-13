@@ -35,10 +35,10 @@ export default class AddProject extends Component {
         let { title, image, description, techUsed, deployedLink, githubLink } = this.state;
         return (
             <div>
-                <h1> Upload a Project</h1>
+                <h1 className="page-header"> Upload a Project</h1>
                 <div className="row">
                     <div className="column column-50 column-offset-25">
-                        <form onSubmit={this.handleSubmit}>
+                        <form className="ui form" onSubmit={this.handleSubmit}>
                             <div>
                                 <label>Title: </label>
                                 <input
@@ -89,7 +89,7 @@ export default class AddProject extends Component {
                                     onChange={this.handleChange}
                                     />
                             </div>  
-                            <input type="submit" />
+                            <input className="ui button" type="submit" />
                         </form>
                     </div>
                 </div>

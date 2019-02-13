@@ -42,7 +42,7 @@ class UsersShow extends Component {
         if (loading) return<div></div>
         return(
             <div className="resume-container">
-                <h1>{user.firstName} {user.lastName}'s Resume Form goes here</h1>
+                <h1 className="section-header">{user.firstName} {user.lastName}'s Resume </h1>
                 <div>
                     <h3>Header/Hero Img upload goes here</h3>
                     {/* <img src="#">Hero Image</img> */}
@@ -53,7 +53,7 @@ class UsersShow extends Component {
                 </div>
                 
                 <div className="userContactLinks-container">
-                    <h3>Links:</h3>
+                    <h3 className="section-header">Links:</h3>
                     <ul>
                     <li><h5>Email: <a href={`${user.email}`}>{user.email}</a></h5></li>
                     <li><h5>LinkedIn: <a href={`${user.linkedIn}`}>{user.linkedIn}</a></h5></li>
@@ -62,15 +62,15 @@ class UsersShow extends Component {
                     </ul>
                 </div>
                 <div className="userBlurb-container">
-                    <h3>About {user.firstName}:</h3>
+                    <h3 className="section-header">About {user.firstName}:</h3>
                     <p>{user.aboutUser}</p>
                 </div>
                 <div className="userSkills-container">
-                    <h3>Skills:</h3>
+                    <h3 className="section-header">Skills:</h3>
                     <p>{user.skills}</p>
                 </div>
                 <div className="projects-container">
-                    <h3>Projects:</h3>
+                    <h3 className="section-header">Projects:</h3>
                     { projects.map(( project, i ) => {
                         return<div key={i}>
                             {/* <h5>{project.name}</h5>
