@@ -9,14 +9,15 @@ import UsersShow from './components/UsersIndexContainer/UsersShow';
 import FormInput from './components/FormInput';
 import EditProject from './components/EditProject';
 // import Project from './components/Project';
-// import AddProject from './components/AddProject';
+import AddProject from './components/AddProject';
 import Logout from './components/Logout';
 import UsersIndexContainer from './components/UsersIndexContainer';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import httpClient from './utilities/httpClient';
+import { Route, withRouter } from 'react-router-dom';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
     state = {
         currentUser: httpClient.getCurrentUser()
     }
@@ -53,6 +54,9 @@ class App extends Component {
                     <Route exact path="/edit" render={(props) => {
                         return <FormInput {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
                     }} />
+                    <Route exact path="/addProject" render={(props) => {
+                        return <AddProject {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
+                    }} />
                     <Route exact path="/editProject" render={(props) => {
                         return <EditProject {...props} currentUser={this.state.currentUser} onLoginSuccess={this.onAuthSuccess} />
                     }} />
@@ -75,4 +79,4 @@ class App extends Component {
         )
     }
 }
-export default App;
+export default withRouter(App);

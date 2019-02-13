@@ -19,6 +19,7 @@ const
         create: (req, res) => {
             User.create(req.body, (err, newUser) => {
                 if (err) res.json({ success: false, payload: null, code: err.code })
+                console.log(res.data)
                 const token = signToken(newUser)
                 res.json({ success: true, token })
             })

@@ -34,7 +34,8 @@ export default ({ project, i, currentUser, projects }) => {
                 projectId={project._id}
                 currentUser={currentUser}
                 projects={projects}
-                key={i}> Edit Project </Link>
+                key={i}
+                onLoginSuccess={this.onAuthSuccess}> Edit Project </Link>
             </div>
         )
      

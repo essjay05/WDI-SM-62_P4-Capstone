@@ -7,7 +7,13 @@ export default class Signup extends Component {
         email: "",
         password: "",
         firstName: "",
-        lastName: ""
+        lastName: "",
+        city: "",
+        state: "",
+        country: "",
+        linkedIn: "",
+        website: "",
+        github: "",
     }
 
     handleChange = (e) => {
@@ -28,7 +34,7 @@ export default class Signup extends Component {
     };
 
     render() {
-        let { email, password, firstName, lastName } = this.state;
+        let { email, password, firstName, lastName, city, state, country, linkedIn, website, github } = this.state;
         let { currentUser } = this.props;
                 
         return (
@@ -72,6 +78,58 @@ export default class Signup extends Component {
                                     onChange={this.handleChange}
                                     value={password}
                                     />
+
+                                    <h1> User Info</h1>
+                            <label>City: </label>
+                            <input
+                                type="text"
+                                name="city"
+                                placeholder="Your City"
+                                value={city}
+                                onChange={this.handleChange}
+                                />
+                            <label>State: </label>
+                            <input
+                                type="text"
+                                name="state"
+                                placeholder="Your State"
+                                value={state}
+                                onChange={this.handleChange}
+                                />
+                            <label>Country: </label>
+                            <input 
+                                type="text"
+                                name="country"
+                                placeholder="Your Country"
+                                value={country}
+                                onChange={this.handleChange}
+                                />
+                           
+                        <h1> User Contact Links</h1>
+                            <label>LinkedIn: </label>
+                            <input
+                                type="text"
+                                name="linkedIn"
+                                placeholder="Your LinkedIn"
+                                value={linkedIn}
+                                onChange={this.handleChange}
+                                />
+                            <label>Personal Website: </label>
+                            <input
+                                type="text"
+                                name="website"
+                                placeholder="Your Website"
+                                value={website}
+                                onChange={this.handleChange}
+                                />
+                            <label>GitHub: </label>
+                            <input 
+                                type="text"
+                                name="github"
+                                placeholder="Your GitHub"
+                                value={github}
+                                onChange={this.handleChange}
+                                />     
                                 <input type="submit" />
                             </form>
                         </div>

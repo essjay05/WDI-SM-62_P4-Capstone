@@ -4,7 +4,7 @@ import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 // import { Redirect } from 'react-router-dom';
 
-export default class Edit extends Component {
+export default class AddProject extends Component {
     
     state = {
         resume: {
@@ -24,9 +24,11 @@ export default class Edit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let { currentUser } =this.props;
-        let user = httpClient.addProject(`/api/users/${currentUser._id}/projects`, this.state)
-            if (user) {
+        let { onLoginSuccess } = this.props;
+        let { currentUser } = this.props;
+        let user = httpClient.addProject(`/${currentUser._id}/projects`, this.state)
+            if (user)  {
+                console.log(user)
                 this.props.onLoginSuccess()
                 this.props.history.push('/user')
             }

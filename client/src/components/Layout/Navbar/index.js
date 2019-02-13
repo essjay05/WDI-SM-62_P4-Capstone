@@ -16,12 +16,7 @@ export default ({ currentUser }) => {
                 <div className="column column-50 column-offset-25">
                     <span>
                         <Link className="nav-link" to="/users"> Users Index </Link>
-<<<<<<< HEAD
-                        <Link className="nav-link" currentUser={ currentUser } to={`/users/${currentUser._id}`}>{currentUser.firstName} {currentUser.lastName}'s Profile Page</Link>
-                        <Link className="nav-link" to={`/users/${currentUser._id}`}> User Profile</Link>
-=======
                         <Link className="nav-link" to="/user/"> User Profile</Link>
->>>>>>> master
                         <Link className="nav-link" to="/edit"> Edit </Link>
                         <Link className="nav-link" to="/logout"> Logout </Link>
                     </span>

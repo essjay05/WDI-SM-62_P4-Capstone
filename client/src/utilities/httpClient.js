@@ -21,10 +21,7 @@ httpClient.getCurrentUser = function() {
 httpClient.authenticate = async function(credentials, url) {
     try {
         let res = await this({ method: "post", url, data: credentials });
-<<<<<<< HEAD
-=======
         console.log(res.data)
->>>>>>> form-submit
         debugger
         const token = res.data.token;
         debugger
@@ -61,9 +58,11 @@ httpClient.updateUser = async function (credentials, url) {
 httpClient.addProject = async function (credentials, url) {
     try {
         let res = await this({ method: 'post', url, data: credentials })
-        const user = res.data.payload
+        const { project } = res.data.payload
+        console.log('This is the res.data.payload:', res.data.payload)
+        console.log(project)
         debugger
-        if (user) {
+        if ( project ) {
             return httpClient.logout()
         }
     } catch (err) {
