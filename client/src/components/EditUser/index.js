@@ -42,14 +42,13 @@ class FormInput extends Component {
             debugger
     };
 
-    handleDelete = async (e) => {
+    handleDelete = (e) => {
         e.preventDefault();
         let { currentUser } = this.props
-        let user = httpClient.deleteUser(`/api/users/${currentUser._id}`, this.state)
-            if (user) {
-                debugger
-                this.props.logout()
-            }
+        axios.delete(`/api/users/${currentUser._id}`)
+            .then(res => {
+                this.props.history.push('/logout');
+            })
     };
 
     render() {
