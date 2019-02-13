@@ -1,18 +1,24 @@
 # WDI-SM-62: Project FOUR "PORT=f0710"... by Joy Serquiña)
 ### Build a Full Stack MERN app
-I have created a full stack MERN app that is to templatize portfolios for tech/design creatives so they can create, upload, and update their projects easily into their online resume/portfolios.
+I have created a full stack MERN app that is to templatize portfolios for tech/design creatives so they can create, upload, and update their projects easily into their online resume/portfolios.  The users will also be able to discover/see other users' portfolios and projects as well.
 
 
 
 ### Preview
-![Haute-Food13 splash/about page](https://i.imgur.com/8RTwrml.png)
-![Haute-Food13 sign up page] (https://i.imgur.com/NshuHSV.png)
-![Haute-Food13 sign  page] (https://i.imgur.com/SIt8y6Z.png)
-![Edit Profile page] (https://i.imgur.com/zNXWApU.png)
-![Community food feed page] (https://i.imgur.com/AEvJkCO.png)
-![User's food feed page] (https://i.imgur.com/iLVc1gV.png)
-![User's new post page] (https://i.imgur.com/cm7jY0h.png)
-![User's edit post page] (https://i.imgur.com/FsBRreR.png)
+1. Home/Sign Up Page
+![PORT=f0710 home/signup page](https://i.imgur.com/Oaa1Rjr.png)
+2. Users Index Page
+![PORT=f0710 users index page] (https://i.imgur.com/jhSPB3G.png)
+3. Current User's Profile Page
+![PORT=f0710 current user's pagee] (https://i.imgur.com/0yrflUM.png)
+4. Edit Profile Page
+![Edit Profile page] (https://i.imgur.com/N4dvK5B.png)
+5. Add Project Page
+![Add project page] (https://i.imgur.com/JC4R3o1.png)
+6. Other User's Profile Page
+![Other User's profile page] (https://i.imgur.com/voYYwDH.png)
+7. Login Page
+![Login page] (https://i.imgur.com/hbYg5BG.png)
 
 
 ### ERD
@@ -31,6 +37,8 @@ I have created a full stack MERN app that is to templatize portfolios for tech/d
 ![PORT=f0710 Wireframe Sketch pg 2] (https://i.imgur.com/1NoJmDt.jpg)
 ![PORT=f0710 Wireframe Sketch pg 3] (https://i.imgur.com/kkpl0G3.jpg)
 
+### Trello:
+![P4 Trello Board] (https://i.imgur.com/OnPgGnI.png)
 3. I then created my user stories in trello to list the actions they would take, what they would see etc: 
 4. Talked through my ideas/ processes with Zac for approval.
 6. Create a new git repo for the project.
@@ -44,10 +52,10 @@ I have created a full stack MERN app that is to templatize portfolios for tech/d
 
 #####Setting up the functionality:
 1. Used map to iterate through the all the users projects' in my database to show the projects and their data in the Projects section of the Users' page.[Screencapture of forEach code on hike list page](https://i.imgur.com/6WwNmeE.png).
-2. Used a map to iterate through the all the users in my database to render a component with their name, location, job title, and link to their respective pages.[Screencapture of forEach code on hike list page](https://i.imgur.com/4N8nhYr.png).
+2. Used map to iterate through the all the users in my database to render a component[Screencapture of User Info component](https://i.imgur.com/rkeXJq5.png) with their name, location, job title, and link to their respective pages as well as the Users Index page as a list.[Screencapture of map code on users' list page](https://i.imgur.com/8gWrLOU.png).
 3. Upon signing in the User is led to the All Users page to see a list of all users in the database.
 4. When clicking on their own page, they are led to seeing their resume as well as link to add projects to their portfolio.
-5. When the project is added/generated a button also generates with the component with the option to delete the project.
+5. When the project is added/generated a button also generates with the component with the option to delete the project.[Screencapture of code for Project card](https://i.imgur.com/gEX6zu4.png)
 6. The edit user page enables the user to edit all their user login info as well as their resume info.
 
 #####Pushed to Heroku:
