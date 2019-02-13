@@ -1,14 +1,67 @@
+/* Font Family:
+PAIRING 1:
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Merriweather', serif;
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather" rel="stylesheet">
+
+PAIRING 2:
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+
+PAIRING 3:
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Bitter', serif;
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Roboto" rel="stylesheet">
+
+PAIRING 4:
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat" rel="stylesheet">
+
+PAIRING 5:
+    font-family: 'Lato', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Lato" rel="stylesheet">
+
+PAIRING 6:
+    font-family: 'Arvo', serif;
+    font-family: 'Varela Round', sans-serif;
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Varela+Round" rel="stylesheet">
+
+PAIRING 7: BOLD!
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Open+Sans" rel="stylesheet">
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+
+PAIRING 8:
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Bree Serif', serif;
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Source+Sans+Pro" rel="stylesheet">
+
+PAIRING 9:
+    font-family: 'Righteous', cursive;
+    font-family: 'Open Sans', sans-serif;
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Righteous" rel="stylesheet">
+
+PAIRING 10:
+    font-family: 'Teko', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
+*/
+
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
