@@ -104,7 +104,7 @@ class UserShow extends Component {
                             projectid={project._id}
                             />
                             <form onSubmit={this.handleDeleteProject} target={project._id}>
-                                <input className="btn-danger" value="Delete Project" type="submit"/>
+                                <input className="ui button" value="Delete Project" type="submit"/>
                             </form>
                             <Link 
                                 className="nav-link" 

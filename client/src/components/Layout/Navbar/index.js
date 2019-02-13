@@ -5,9 +5,9 @@ import './Navbar.css';
 
 export default ({ currentUser }) => {
     return (
-        <nav className="nav clearfix column">
+        <nav className="navLeft clearfix column">
             <div className="float-left">
-                <span className="nav-link">PORTfol10</span>
+                {/* <Link className="nav-link brand" to="/">PORT=f0710</Link> */}
                 <Link className="nav-link" to="/"> Home </Link>
             </div>
             <div className="float-right">

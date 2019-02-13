@@ -46,10 +46,10 @@ export default class Signup extends Component {
                 {/* { currentUser
                 ? ( */}
                 <div>
-                    <h1> Signup </h1>
+                    <h3> Signup </h3>
                     <div className="row">
                         <div className="column column-50 column-offset-25">
-                            <form onSubmit={this.handleSubmit}>
+                            <form onSubmit={this.handleSubmit} className="ui form">
                                 <h1> User Login Info</h1>
                                 <label>First Name: </label>
                                 <input
@@ -162,7 +162,7 @@ export default class Signup extends Component {
                                     onChange={this.handleChange}
                                     /> 
                
-                                <input type="submit" />
+                                <input className="ui button" type="submit" />
                             </form>
                         </div>
                     </div>

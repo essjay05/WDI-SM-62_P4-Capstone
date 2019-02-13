@@ -27,10 +27,10 @@ class Login extends Component {
         let { email, password } = this.state;
         return (
             <div>
-                <h1> Login </h1>
+                <h1 className="page-header"> Login </h1>
                 <div className="row">
                     <div className="column column-50 column-offset-25">
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleSubmit} className="ui form">
                             <label> Email: </label>
                             <input
                                 type="text"
@@ -47,7 +47,7 @@ class Login extends Component {
                                 onChange={this.handleChange}
                                 value={password}
                                 />
-                            <input type="submit"/>
+                            <input className="ui button" type="submit"/>
                         </form>
                     </div>
                 </div>
