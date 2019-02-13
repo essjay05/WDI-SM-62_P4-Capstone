@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 // import { Redirect } from 'react-router-dom';
 
-export default class Edit extends Component {
+export default class AddProject extends Component {
     
     state = {
-        resume: {
-            title: "",
-            image: "",
-            description: "",
-            techUsed: "",
-            deployedLink: "",
-            githubLink: ""
-        }
+        title: "",
+        image: "",
+        description: "",
+        techUsed: "",
+        deployedLink: "",
+        githubLink: ""
     }
 
     handleChange = (e) => {
@@ -25,11 +23,12 @@ export default class Edit extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         let { currentUser } =this.props;
-        let user = httpClient.addProject(`/api/users/${currentUser._id}/projects`, this.state)
-            if (user) {
-                this.props.onLoginSuccess()
-                this.props.history.push('/user')
-            }
+        debugger
+        console.log(currentUser._id)
+        axios.post(`/api/users/${currentUser._id}/projects`, this.state)
+            .then(res => {
+                this.props.history.push('/user');
+            })
     };
 
     render() {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default ({ project, i, currentUser, projects }) => {
+export default ({ project, i, user, projects }) => {
     // async componentDidMount() {
     //     let { currentUser, project } = this.props;
     //     console.log(currentUser)
@@ -32,7 +32,7 @@ export default ({ project, i, currentUser, projects }) => {
                 /* to="/editProject" */
                 project={project}
                 projectId={project._id}
-                currentUser={currentUser}
+                user={user}
                 projects={projects}
                 key={i}> Edit Project </Link>
             </div>

@@ -10,7 +10,7 @@ module.exports = {
         User.findById(req.params.id, (err, user) => {
             if (err) { res.json({ success: false, err })}
             console.log(user)
-            user.resume.projects.push(req.body)
+            user.projects.push(req.body)
             user.save(err => {
                 if (err) res.json({ success: false, err })
                 res.json({ success: true, user})
@@ -22,7 +22,7 @@ module.exports = {
         User.findById(req.params.id, (err, user) => {
         if (err) { res.json({ success: false, err })}
         else {
-            let projects = user.resume.projects
+            let projects = user.projects
             res.json({ success: true, projects })
             }
         })
@@ -50,7 +50,7 @@ module.exports = {
         User.findById(id, (err, user) => {
             if (err) {res.json({ success: false, err })} 
             else {
-                let project = user.resume.projects.id(proj_id)
+                let project = user.projects.id(proj_id)
                 Object.assign(project, req.body)
                 // project = {...project, ...req.body }
                 console.log(project)
@@ -68,7 +68,7 @@ module.exports = {
             if (err) {res.json({ success: false, err })}
             else {
                 // user.projects.id(p)
-                let projIndex = user.resume.projects.indexOf(proj_id)
+                let projIndex = user.projects.indexOf(proj_id)
                 console.log(projIndex)
                 user.resume.projects.splice(projIndex, 1)
                 user.save(err => {
