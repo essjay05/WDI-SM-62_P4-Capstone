@@ -34,10 +34,6 @@ form {
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-left: 10%;
-}
-.button {
-    margin: 10px;
 }
 
 .brand-title {
@@ -109,7 +105,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("https://i.imgur.com/BeBbAZW.jpg");
+    background-image: url("https://i.imgur.com/CuEGNte.jpg");
     background-size: cover; 
     height: 100vh;
     background-position: center;
