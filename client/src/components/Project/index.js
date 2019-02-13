@@ -26,15 +26,6 @@ export default ({ project, i, user, projects }) => {
                     <a href="{project.deployedLink}">Deployed Link</a>
                     <a href="{project.githubLink}">GitHub Link</a>
                 </div>
-                <Link 
-                className="nav-link" 
-                to={`/editProject/${project._id}`}
-                /* to="/editProject" */
-                project={project}
-                projectId={project._id}
-                user={user}
-                projects={projects}
-                key={i}> Edit Project </Link>
             </div>
         )
      

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Project from '../../components/Project';
+import UserInfo from '../../components/UsersIndexContainer/UserInfo';
 // import httpClient from '../../utilities/httpClient';
 
 class UserShow extends Component {
@@ -61,21 +62,18 @@ class UserShow extends Component {
         if (loading) return<div></div>
         return(
             <div className="resume-container">
-                <h1>{user.firstName} {user.lastName}'s Resume Form goes here</h1>
+                <h1>{user.firstName} {user.lastName}'s Resume here:</h1>
                 <div>
                     <h3>Header/Hero Img upload goes here</h3>
                     {/* <img src="#">Hero Image</img> */}
                 </div>
                 <div className="userInfo-container">
-                    <h3>UserInfo section goes here: </h3>
-                    <ul>
-                        {/* <li><img src="#">User Profile image Here</img></li> */}
-                        <li>{user.city}, {user.state}, {user.country}</li>
-                        <li>User job title here: {user.title}</li>    
-                    </ul>
+                    {/* <h3>UserInfo: </h3> */}
+                    <UserInfo user={ user } />
                 </div>
+                
                 <div className="userContactLinks-container">
-                    <h3>User Contact Links Section</h3>
+                    <h3>Links:</h3>
                     <ul>
                     <li><h5>{user.email}User Email</h5></li>
                     <li><h5>{user.linkedIn}User LinkedIn</h5></li>
@@ -84,14 +82,16 @@ class UserShow extends Component {
                     </ul>
                 </div>
                 <div className="userBlurb-container">
-                    <p>About the User paragraph goes here:{user.aboutUser}</p>
+                    <h3>About {user.firstName}:</h3>
+                    <p>{user.aboutUser}</p>
                 </div>
                 <div className="userSkills-container">
-                    <p>Resume Skills here:{user.skills}</p>
+                    <h3>Skills:</h3>
+                    <p>{user.skills}</p>
                 </div>
                 <div className="projects-container">
+                    <h3>Projects: </h3>
                     <Link className="nav-link" to="/addProject"> Add Project </Link>
-                    <h3>Project Boxes Go here</h3>
                     { projects.map(( project, i ) => {
                         return<div key={i}>
                             {/* <h5>{project.name}</h5>
@@ -102,16 +102,24 @@ class UserShow extends Component {
                             user={ user }
                             projects={user.projects}
                             project={project}
-                            projectId={project._id}
+                            projectid={project._id}
                             />
                             <form onSubmit={this.handleDeleteProject} target={project._id}>
                                 <input className="btn-danger" value="Delete Project" type="submit"/>
                             </form>
-                            </div>
+                            <Link 
+                                className="nav-link" 
+                                to={`/editProject/${project._id}`}
+                                /* to="/editProject" */
+                                project={project}
+                                projectid={project._id}
+                                user={user}
+                                projects={projects}
+                                key={i}> Edit Project 
+                            </Link>
+                        </div>
                     })}
                 </div>
-
-                {/* <AddProject currentUser={currentUser} /> */}
             </div>
         ) 
     }

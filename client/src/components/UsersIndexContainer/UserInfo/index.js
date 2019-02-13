@@ -23,15 +23,20 @@ export default class UserInfo extends Component {
         console.log(user)
         debugger
         return (
-            <div>
-                <h3>{user.firstName} {user.lastName} Profile Here</h3>
+            <div className="userInfo-container">
+                <h3>{user.firstName} {user.lastName}</h3>
                 {/* <img src="${user.profileImg}" alt="User Profile">Profile Photo</img> */}
+                <ul>
+                    {/* <li><img src="#">User Profile image Here</img></li> */}
+                    <li>Location: {user.city}, {user.state}, {user.country}</li>
+                    <li>Title: {user.title}</li>    
+                </ul>
                 <Link
                     className="nav-link"
                     user={ user }
                     userId={ user._id }
-                    to={`/users/${user._id}`}>Link to User's Profile Page
-                </Link>
+                    to={`/users/${user._id}`}>{user.firstName} {user.lastName}'s Profile Page
+                </Link>   
             </div>
         )
     }
