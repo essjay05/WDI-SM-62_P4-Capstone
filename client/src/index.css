@@ -45,14 +45,32 @@ form {
     color:#1d1e22;
     font-size: 150px;
     position: fixed;
-    
+    margin-bottom: 10px;
 }
 
 .page-header {
     font-family: 'Montserrat Subrayada', sans-serif;
     color:#1d1e22;
-    font-size: 75px; 
+    font-size: 45px; 
 }
+
+.section-header {
+    font-family: 'Raleway', sans-serif;
+    color:#393f4d;
+    font-size: 25px; 
+}
+
+.Link {
+    font-size: 15px;
+    color: #d4d4dc;
+}
+
+p, li {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    margin: 5px;
+}
+
 
 .aboutBox {
     color: white;

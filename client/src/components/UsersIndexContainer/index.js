@@ -55,13 +55,13 @@ export default class UsersIndexContainer extends Component {
         let { currentUser } = this.props;
         return (
             <div className="grid usersIndexContainer">
-                <h1>Hello, {currentUser.firstName}!</h1>
-                <h3 className="usersIndexTitle">List of All Users</h3>
+                <h1 className="page-header">Hello, {currentUser.firstName}!</h1>
+                {/* <h3  className="section-header">List of All Users</h3> */}
                 <aside className="aspect-ratio"></aside>
                 <article>
                     <div>
                         <Link className="nav-link" to="/user"> Your Profile </Link>
-                        <h3>All Users Index List Goes Here</h3>
+                        <h3 className="section-header">Users:</h3>
                         <ul>
                         { users.map((user, i) => {
                         return <div key={i}>

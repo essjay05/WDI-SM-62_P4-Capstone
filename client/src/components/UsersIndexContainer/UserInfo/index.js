@@ -24,7 +24,7 @@ export default class UserInfo extends Component {
         debugger
         return (
             <div className="userInfo-container">
-                <h3>{user.firstName} {user.lastName}</h3>
+                <h3 className="section-header">{user.firstName} {user.lastName}</h3>
                 {/* <img src="${user.profileImg}" alt="User Profile">Profile Photo</img> */}
                 <ul>
                     {/* <li><img src="#">User Profile image Here</img></li> */}

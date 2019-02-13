@@ -62,9 +62,9 @@ class UserShow extends Component {
         if (loading) return<div></div>
         return(
             <div className="resume-container">
-                <h1>{user.firstName} {user.lastName}'s Resume here:</h1>
+                <h1 className="page-header">{user.firstName} {user.lastName}'s Resume here:</h1>
                 <div>
-                    <h3>Header/Hero Img upload goes here</h3>
+                    {/* <h3>Header/Hero Img upload goes here</h3> */}
                     {/* <img src="#">Hero Image</img> */}
                 </div>
                 <div className="userInfo-container">
@@ -73,7 +73,7 @@ class UserShow extends Component {
                 </div>
                 
                 <div className="userContactLinks-container">
-                    <h3>Links:</h3>
+                    <h3 className="section-header">Links:</h3>
                     <ul>
                     <li><h5>{user.email}User Email</h5></li>
                     <li><h5>{user.linkedIn}User LinkedIn</h5></li>
@@ -82,18 +82,18 @@ class UserShow extends Component {
                     </ul>
                 </div>
                 <div className="userBlurb-container">
-                    <h3>About {user.firstName}:</h3>
+                    <h3 className="section-header">About {user.firstName}:</h3>
                     <p>{user.aboutUser}</p>
                 </div>
                 <div className="userSkills-container">
-                    <h3>Skills:</h3>
+                    <h3 className="section-header">Skills:</h3>
                     <p>{user.skills}</p>
                 </div>
-                <div className="projects-container">
-                    <h3>Projects: </h3>
+                <div className="projects-container ui cards">
+                    <h3 className="section-header">Projects: </h3>
                     <Link className="nav-link" to="/addProject"> Add Project </Link>
                     { projects.map(( project, i ) => {
-                        return<div key={i}>
+                        return<div key={i} className="card">
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
@@ -104,7 +104,7 @@ class UserShow extends Component {
                             projectid={project._id}
                             />
                             <form onSubmit={this.handleDeleteProject} target={project._id}>
-                                <input className="ui button" value="Delete Project" type="submit"/>
+                                <input className="ui bottom attached button" value="Delete Project" type="submit"/>
                             </form>
                             <Link 
                                 className="nav-link" 
