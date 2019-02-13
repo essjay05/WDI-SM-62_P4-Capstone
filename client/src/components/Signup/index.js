@@ -39,7 +39,7 @@ export default class Signup extends Component {
 
     render() {
         let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
-        let { currentUser } = this.props;
+        // let { currentUser } = this.props;
                 
         return (
             <div>

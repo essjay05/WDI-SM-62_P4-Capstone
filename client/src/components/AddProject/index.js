@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import httpClient from '../../utilities/httpClient';
+// import httpClient from '../../utilities/httpClient';
 // import ProjectForm from '../ProjectForm';
 // import { Redirect } from 'react-router-dom';
 

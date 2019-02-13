@@ -98,7 +98,6 @@ class UserShow extends Component {
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
                             <Project 
-                            key={i}
                             user={ user }
                             projects={user.projects}
                             project={project}
@@ -114,8 +113,7 @@ class UserShow extends Component {
                                 project={project}
                                 projectid={project._id}
                                 user={user}
-                                projects={projects}
-                                key={i}> Edit Project 
+                                projects={projects}> Edit Project 
                             </Link>
                         </div>
                     })}

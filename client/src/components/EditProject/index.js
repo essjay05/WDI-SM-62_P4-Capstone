@@ -20,7 +20,7 @@ export default class Edit extends Component {
     
     componentDidMount() {
         debugger
-        let project = this.props.match.params
+        // let project = this.props.match.params
     } 
     
 

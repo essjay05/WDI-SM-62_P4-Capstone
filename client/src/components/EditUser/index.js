@@ -4,7 +4,7 @@ import axios from 'axios';
 // import UserInfoForm from './UserInfoForm';
 // import UserSkillsForm from './UserSkillsForm';
 // import UserContactsForm from './UserContactsForm';
-import httpClient from '../../utilities/httpClient';
+// import httpClient from '../../utilities/httpClient';
 
 class FormInput extends Component {
     state = {
