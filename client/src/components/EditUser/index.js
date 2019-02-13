@@ -20,8 +20,7 @@ class FormInput extends Component {
         aboutUser: this.props.currentUser.aboutUser,
         linkedIn: this.props.currentUser.linkedIn,
         github: this.props.currentUser.github,
-        website: this.props.currentUser.website,
-        projects: this.props.currentUser.projects
+        website: this.props.currentUser.website
     }
 
     handleChange = (e) => {
@@ -32,12 +31,12 @@ class FormInput extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        // let { currentUser } = this.props
+        let { currentUser } = this.props
         debugger
         let user = axios.patch(`/api/users/${this.props.currentUser._id}`, this.state)
             if (user) {
                 this.props.onLoginSuccess()
-                this.props.history.push('/user')
+                this.props.history.push(`/users/${currentUser._id}`)
                 debugger
             }
             debugger

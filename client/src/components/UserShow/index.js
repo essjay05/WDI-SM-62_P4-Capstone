@@ -27,9 +27,7 @@ class UserShow extends Component {
     // } 
     async componentDidMount() {
         let { currentUser } = this.props
-        // let { resume } = this.props.currentUser;
-        // let { projects }  = this.props.currentUser.resume;
-        debugger
+        // debugger
         
         try {
             let { data: { payload } } = await axios.get(`/api/users/${currentUser._id}`);
@@ -58,10 +56,8 @@ class UserShow extends Component {
 
     render () {
         let { user, loading, projects } = this.state;
-        // let { projects } = resume;
-        console.log(user)
-        // console.log(this.state)
-        debugger 
+        // console.log(user)
+        // debugger 
         if (loading) return<div></div>
         return(
             <div className="resume-container">
@@ -75,7 +71,6 @@ class UserShow extends Component {
                     <ul>
                         {/* <li><img src="#">User Profile image Here</img></li> */}
                         <li>{user.city}, {user.state}, {user.country}</li>
-                        <li>{user.tagLine} User Tagline/1-liner here</li>
                         <li>User job title here: {user.title}</li>    
                     </ul>
                 </div>

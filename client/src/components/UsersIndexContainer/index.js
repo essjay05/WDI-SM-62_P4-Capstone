@@ -8,7 +8,6 @@ export default class UsersIndexContainer extends Component {
     state = {
         users:  [],
         currentUser: null,
-        user: null,
         loading: true
     }
     // Figure out how to load USERS array
@@ -17,14 +16,13 @@ export default class UsersIndexContainer extends Component {
         axios.get('/api/users')
             .then(res => {
                 console.log(res.data.payload)
-                debugger
+                // debugger
                 this.setState({ users: res.data.payload })
             })
             .catch(err => {
                 debugger
             })
-            this.setState({ user: this.props.currentUser })
-            debugger
+            this.setState({ currentUser: this.props.currentUser })
     }
 
     // async componentDidMount() {
@@ -53,11 +51,11 @@ export default class UsersIndexContainer extends Component {
     // }
 
     render() {
-        let { users} = this.state;
+        let { users } = this.state;
         let { currentUser } = this.props;
         return (
             <div className="grid usersIndexContainer">
-                {/* <h1>Hello, {currentUser.firstName}!</h1> */}
+                <h1>Hello, {currentUser.firstName}!</h1>
                 <h3 className="usersIndexTitle">List of All Users</h3>
                 <aside className="aspect-ratio"></aside>
                 <article>

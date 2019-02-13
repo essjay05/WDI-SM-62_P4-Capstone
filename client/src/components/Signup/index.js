@@ -50,6 +50,7 @@ export default class Signup extends Component {
                     <div className="row">
                         <div className="column column-50 column-offset-25">
                             <form onSubmit={this.handleSubmit}>
+                                <h1> User Login Info</h1>
                                 <label>First Name: </label>
                                 <input
                                     type="text"
@@ -83,88 +84,84 @@ export default class Signup extends Component {
                                     value={password}
                                     />
 
-                                    <h1> User Info</h1>
-                            <label>City: </label>
-                            <input
-                                type="text"
-                                name="city"
-                                placeholder="Your City"
-                                value={city}
-                                onChange={this.handleChange}
-                                />
-                            <label>State: </label>
-                            <input
-                                type="text"
-                                name="state"
-                                placeholder="Your State"
-                                value={state}
-                                onChange={this.handleChange}
-                                />
-                            <label>Country: </label>
-                            <input 
-                                type="text"
-                                name="country"
-                                placeholder="Your Country"
-                                value={country}
-                                onChange={this.handleChange}
-                                />
-                            <label>Title: </label>
-                            <input 
-                                type="text"
-                                name="title"
-                                placeholder="Job Title"
-                                value={title}
-                                onChange={this.handleChange}
-                                />
-                           
-                        <h1> User About Section</h1>
-                            <label>About: </label>
-                            <input
-                                type="text"
-                                name="aboutUser"
-                                placeholder="Write a brief paragraph describing yourself..."
-                                value={aboutUser}
-                                onChange={this.handleChange}
-                                />
-                            <label>Skills </label>
-                            <input
-                                type="text"
-                                name="skills"
-                                placeholder="Type in a list of your skills separated out by a comma (ie. Html, CSS, JavaScript)"
-                                value={skills}
-                                onChange={this.handleChange}
-                                />
-                           
-                        <h1> User Contact Links</h1>
-                            <label>LinkedIn: </label>
-                            <input
-                                type="text"
-                                name="linkedIn"
-                                placeholder="Your LinkedIn"
-                                value={linkedIn}
-                                onChange={this.handleChange}
-                                />
-                            <label>Personal Website: </label>
-                            <input
-                                type="text"
-                                name="website"
-                                placeholder="Your Website"
-                                value={website}
-                                onChange={this.handleChange}
-                                />
-                            <label>GitHub: </label>
-                            <input 
-                                type="text"
-                                name="github"
-                                placeholder="Your GitHub"
-                                value={github}
-                                onChange={this.handleChange}
-                                /> 
-
-                            <div className="buttons">
-                                <input type="submit" />
-                                <button onClick={this.handleDelete}>Delete</button>
-                            </div>    
+                                <h1> User Info</h1>
+                                <label>City: </label>
+                                <input
+                                    type="text"
+                                    name="city"
+                                    placeholder="Your City"
+                                    value={city}
+                                    onChange={this.handleChange}
+                                    />
+                                <label>State: </label>
+                                <input
+                                    type="text"
+                                    name="state"
+                                    placeholder="Your State"
+                                    value={state}
+                                    onChange={this.handleChange}
+                                    />
+                                <label>Country: </label>
+                                <input 
+                                    type="text"
+                                    name="country"
+                                    placeholder="Your Country"
+                                    value={country}
+                                    onChange={this.handleChange}
+                                    />
+                                <label>Title: </label>
+                                <input 
+                                    type="text"
+                                    name="title"
+                                    placeholder="Job Title"
+                                    value={title}
+                                    onChange={this.handleChange}
+                                    />
+                            
+                                <h1> User About Section</h1>
+                                <label>About: </label>
+                                <input
+                                    type="text"
+                                    name="aboutUser"
+                                    placeholder="Write a brief paragraph describing yourself..."
+                                    value={aboutUser}
+                                    onChange={this.handleChange}
+                                    />
+                                <label>Skills </label>
+                                <input
+                                    type="text"
+                                    name="skills"
+                                    placeholder="Type in a list of your skills separated out by a comma (ie. Html, CSS, JavaScript)"
+                                    value={skills}
+                                    onChange={this.handleChange}
+                                    />
+                            
+                                <h1> User Contact Links</h1>
+                                <label>LinkedIn: </label>
+                                <input
+                                    type="text"
+                                    name="linkedIn"
+                                    placeholder="Your LinkedIn"
+                                    value={linkedIn}
+                                    onChange={this.handleChange}
+                                    />
+                                <label>Personal Website: </label>
+                                <input
+                                    type="text"
+                                    name="website"
+                                    placeholder="Your Website"
+                                    value={website}
+                                    onChange={this.handleChange}
+                                    />
+                                <label>GitHub: </label>
+                                <input 
+                                    type="text"
+                                    name="github"
+                                    placeholder="Your GitHub"
+                                    value={github}
+                                    onChange={this.handleChange}
+                                    /> 
+               
                                 <input type="submit" />
                             </form>
                         </div>

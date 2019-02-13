@@ -36,7 +36,7 @@ class UsersShow extends Component {
     render () {
         let { user, loading, projects } = this.state;
         // let  { projects }  = this.props.user;
-        console.log(user)
+        console.log(projects)
         debugger 
         if (loading) return<div></div>
         return(
@@ -51,7 +51,6 @@ class UsersShow extends Component {
                     <ul>
                         {/* <li><img src="#">User Profile image Here</img></li> */}
                         <li>{user.city}, {user.state}, {user.country}</li>
-                        <li>{user.tagLine} User Tagline/1-liner here</li>
                         <li>User job title here: {user.title}</li>    
                     </ul>
                 </div>
@@ -71,14 +70,19 @@ class UsersShow extends Component {
                     <p>Resume Skills here:{user.skills}</p>
                 </div>
                 <div className="projects-container">
-                    <Link className="nav-link" to="/addProject"> Add Project </Link>
                     <h3>Project Boxes Go here</h3>
                     { projects.map(( project, i ) => {
                         return<div key={i}>
                             {/* <h5>{project.name}</h5>
                             <p>{project.description}</p>
                             <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                            <Project user={user} project={project}/>
+                            <Project 
+                            key={i}
+                            user={ user }
+                            projects={user.projects}
+                            project={project}
+                            projectId={project._id}
+                            />
                             </div>
                     })}
                 </div>
