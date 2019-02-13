@@ -1,4 +1,5 @@
-# WDI-SM-62: Project FOUR "PORT=f0710"... by Joy Serquiña)
+# WDI-SM-62: P4 (Capstone): "PORT=f0710" 
+##by Joy Serquiña
 ### Build a Full Stack MERN app
 I have created a full stack MERN app that is to templatize portfolios for tech/design creatives so they can create, upload, and update their projects easily into their online resume/portfolios.  The users will also be able to discover/see other users' portfolios and projects as well.
 
