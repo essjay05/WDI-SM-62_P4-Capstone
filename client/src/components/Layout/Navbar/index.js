@@ -7,8 +7,8 @@ export default ({ currentUser }) => {
     return (
         <nav className="navLeft clearfix column">
             <div className="float-left">
-                {/* <Link className="nav-link brand" to="/">PORT=f0710</Link> */}
-                <Link className="nav-link" to="/"> Home </Link>
+                <Link className="nav-link brand" to="/">PORT=f0710</Link>
+                {/* <Link className="nav-link" to="/"> Home </Link> */}
             </div>
             <div className="float-right">
             { currentUser

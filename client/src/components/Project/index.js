@@ -13,15 +13,15 @@ export default ({ project, i, user, projects }) => {
     
     // debugger
         return (
-            <div className="project container ui card">
+            <div className="ui card">
                 <div className="content">
                     {/* <div className="image"><img src={project.image}>Image Box goes here</img></div> */}
-                    <div className="header"><h3>"{project.title}"</h3></div>
-                    <div className="description"><h4>Description:{project.description}</h4></div>
-                    <div className="description"><h5>Tech Used:{project.techUsed}</h5></div>
+                    <div className="header"><h3 className="card-text">"{project.title}"</h3></div>
+                    <div className="description"><h4 className="card-text">Description:{project.description}</h4></div>
+                    <div className="description"><h5 className="card-text">Tech Used:{project.techUsed}</h5></div>
                     <div className="projectLinks description" >
-                        <a href="{project.deployedLink}">Deployed Link</a>
-                        <a href="{project.githubLink}">GitHub Link</a>
+                        <a className="card-text" href="{project.deployedLink}">Deployed Link</a>
+                        <a className="card-text" href="{project.githubLink}">GitHub Link</a>
                     </div>
                 </div>
             </div>

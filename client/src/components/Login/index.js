@@ -47,7 +47,7 @@ class Login extends Component {
                                 onChange={this.handleChange}
                                 value={password}
                                 />
-                            <input className="ui inverted green button" type="submit"/>
+                            <input className="ui inverted tiny green button" type="submit"/>
                         </form>
                     </div>
                 </div>

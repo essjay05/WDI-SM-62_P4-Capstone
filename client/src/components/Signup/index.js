@@ -162,7 +162,7 @@ export default class Signup extends Component {
                                     onChange={this.handleChange}
                                     /> 
                
-                                <input className="ui button" type="submit" />
+                                <input className="ui inverted tiny green button" type="submit" />
                             </form>
                         </div>
                     </div>

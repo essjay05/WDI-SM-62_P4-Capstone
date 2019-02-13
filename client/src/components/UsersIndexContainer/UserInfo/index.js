@@ -23,7 +23,7 @@ export default class UserInfo extends Component {
         console.log(user)
         debugger
         return (
-            <div className="userInfo-container">
+            <div className="ui list userInfo-container">
                 <h3 className="section-header">{user.firstName} {user.lastName}</h3>
                 {/* <img src="${user.profileImg}" alt="User Profile">Profile Photo</img> */}
                 <ul>
@@ -35,7 +35,7 @@ export default class UserInfo extends Component {
                     className="nav-link"
                     user={ user }
                     userid={ user._id }
-                    to={`/users/${user._id}`}>{user.firstName} {user.lastName}'s Profile Page
+                    to={`/users/${user._id}`}>Go to {user.firstName} {user.lastName}'s Page
                 </Link>   
             </div>
         )
