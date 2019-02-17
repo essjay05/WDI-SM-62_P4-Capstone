@@ -10,7 +10,7 @@ export default class Layout extends Component {
             <div className="page-wrapper">
                 <Navbar currentUser={this.props.currentUser} />
                 <h1 className="brand-title">PORT=f0710</h1>
-                <main className="container">
+                <main className="container main">
                     { this.props.children }    
                 </main>
             </div>
