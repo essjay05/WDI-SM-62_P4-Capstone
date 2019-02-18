@@ -55,22 +55,23 @@ export default class UsersIndexContainer extends Component {
         let { users } = this.state;
         let { currentUser } = this.props;
         return (
-            <div className="usersIndexContainer">
+            <div className="">
                 <h1 className="page-header">Hello, {currentUser.firstName}!</h1>
                 {/* <h3  className="section-header">List of All Users</h3> */}
                 <aside className="aspect-ratio"></aside>
-                <article>
-                    <div>
-                        <Link className="nav-link" to="/user"> Your Profile </Link>
+                {/* <article> */}
+                    <Link className="nav-link" to="/user"> Your Profile </Link>
                         <h3 className="section-header">Users:</h3>
-                        <ul>
+                        <div className="ui grid usersIndexContainer">
+                        {/* <ul> */}
                         { users.map((user, i) => {
-                        return <div key={i} className="ui celled grid">
+                        return <div key={i} className="row">
                             <UserInfo
                                 key={i}
                                 currentUser={ currentUser }
                                 user={ user }
                                 onClick={this.handleClick}
+                                className=""
                             />
                             {/* <Link
                                 className="nav-link"
@@ -80,9 +81,9 @@ export default class UsersIndexContainer extends Component {
                             </Link>  */}
                         </div>
                         })}
-                        </ul>  
+                        {/* </ul>   */}
                     </div>
-                </article>
+                {/* </article> */}
             </div>
         )
     }

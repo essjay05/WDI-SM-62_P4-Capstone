@@ -61,7 +61,7 @@ class UserShow extends Component {
         // debugger 
         if (loading) return<div></div>
         return(
-            <div className="resume-container ui centered grid">
+            <div className="resume-container ui celled centered grid">
             <div className="column">
                 <div>
                 <h1 className="page-header">{user.firstName} {user.lastName}'s Resume</h1>
