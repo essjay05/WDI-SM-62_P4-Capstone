@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import UserInfo from './UserInfo';
 import { Link } from 'react-router-dom';
+import './usersIndex.css';
 
 export default class UsersIndexContainer extends Component {
 
@@ -54,7 +55,7 @@ export default class UsersIndexContainer extends Component {
         let { users } = this.state;
         let { currentUser } = this.props;
         return (
-            <div className="grid usersIndexContainer">
+            <div className="usersIndexContainer">
                 <h1 className="page-header">Hello, {currentUser.firstName}!</h1>
                 {/* <h3  className="section-header">List of All Users</h3> */}
                 <aside className="aspect-ratio"></aside>
@@ -64,13 +65,19 @@ export default class UsersIndexContainer extends Component {
                         <h3 className="section-header">Users:</h3>
                         <ul>
                         { users.map((user, i) => {
-                        return <div key={i}>
+                        return <div key={i} className="ui celled grid">
                             <UserInfo
                                 key={i}
                                 currentUser={ currentUser }
                                 user={ user }
                                 onClick={this.handleClick}
                             />
+                            {/* <Link
+                                className="nav-link"
+                                user={ user }
+                                userid={ user._id }
+                                to={`/users/${user._id}`}>Go to {user.firstName} {user.lastName}'s Page
+                            </Link>  */}
                         </div>
                         })}
                         </ul>  

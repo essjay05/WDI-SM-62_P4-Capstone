@@ -65,7 +65,7 @@ export default class Edit extends Component {
             <div>
                 <h1> Edit Your Project</h1>
                 <div className="row">
-                    <div className="column column-50 column-offset-25">
+                    <div className="">
                         <form onSubmit={this.handleSubmit}>
                             <div>
                                 <label>Title: </label>

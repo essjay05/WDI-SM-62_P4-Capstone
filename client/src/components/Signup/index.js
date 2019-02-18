@@ -52,22 +52,28 @@ export default class Signup extends Component {
                             <div className="">
                                 <form onSubmit={this.handleSubmit} className="ui form">
                                     <h1 className="section-header"> User Login Info</h1>
-                                    <label>First Name: </label>
-                                    <input
-                                        type="text"
-                                        name="firstName"
-                                        placeholder="Your First Name"
-                                        onChange={this.handleChange}
-                                        value={firstName}
-                                        />
-                                    <label>Last Name: </label>
-                                    <input
-                                        type="text"
-                                        name="lastName"
-                                        placeholder="Your Last Name"
-                                        onChange={this.handleChange}
-                                        value={lastName}
-                                        />
+                                    <div className="fields">
+                                        <div className="field">
+                                            <label>First Name: </label>
+                                            <input
+                                                type="text"
+                                                name="firstName"
+                                                placeholder="Your First Name"
+                                                onChange={this.handleChange}
+                                                value={firstName}
+                                                />
+                                        </div>
+                                        <div className="field">
+                                            <label>Last Name: </label>
+                                            <input
+                                                type="text"
+                                                name="lastName"
+                                                placeholder="Your Last Name"
+                                                onChange={this.handleChange}
+                                                value={lastName}
+                                                />
+                                        </div> 
+                                    </div>     
                                     <label>Email: </label>
                                     <input 
                                         type="text"
@@ -84,7 +90,7 @@ export default class Signup extends Component {
                                         onChange={this.handleChange}
                                         value={password}
                                         />
-
+                                    
                                     <h1 className="section-header"> User Info</h1>
                                     <label>City: </label>
                                     <input
@@ -94,22 +100,28 @@ export default class Signup extends Component {
                                         value={city}
                                         onChange={this.handleChange}
                                         />
-                                    <label>State: </label>
-                                    <input
-                                        type="text"
-                                        name="state"
-                                        placeholder="Your State"
-                                        value={state}
-                                        onChange={this.handleChange}
-                                        />
-                                    <label>Country: </label>
-                                    <input 
-                                        type="text"
-                                        name="country"
-                                        placeholder="Your Country"
-                                        value={country}
-                                        onChange={this.handleChange}
-                                        />
+                                    <div className="fields">
+                                        <div className="field">
+                                            <label>State: </label>
+                                            <input
+                                                type="text"
+                                                name="state"
+                                                placeholder="Your State"
+                                                value={state}
+                                                onChange={this.handleChange}
+                                                />
+                                        </div>
+                                        <div className="field">
+                                            <label>Country: </label>
+                                            <input 
+                                                type="text"
+                                                name="country"
+                                                placeholder="Your Country"
+                                                value={country}
+                                                onChange={this.handleChange}
+                                                />
+                                        </div>
+                                    </div>
                                     <label>Title: </label>
                                     <input 
                                         type="text"

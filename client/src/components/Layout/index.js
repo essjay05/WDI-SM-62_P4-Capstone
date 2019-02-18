@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import './Layout.css';
 
 export default class Layout extends Component {
@@ -9,10 +10,10 @@ export default class Layout extends Component {
         return (
             <div className="page-wrapper">
                 <Navbar currentUser={this.props.currentUser} />
-                <h1 className="brand-title">PORT=f0710</h1>
-                <main className="container main">
+                {/* <main className="container main"> */}
                     { this.props.children }    
-                </main>
+                {/* </main> */}
+                <Footer />
             </div>
         )
     }

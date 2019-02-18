@@ -13,7 +13,7 @@ export default ({ currentUser }) => {
             <div className="float-right">
             { currentUser
             ? (
-                <div className="column column-50 column-offset-25">
+                <div className="">
                     <span>
                         <Link className="nav-link" to="/users"> Users Index </Link>
                         <Link className="nav-link" to="/user/"> User Profile</Link>
@@ -23,7 +23,7 @@ export default ({ currentUser }) => {
                 </div>
                 )
                 : (
-                <div className="column column-50 column-offset-25">
+                <div className="">
                     <span>
                         <Link className="nav-link" to="/login"> Login </Link>
                         <Link className="nav-link" to="/"> Signup </Link>
