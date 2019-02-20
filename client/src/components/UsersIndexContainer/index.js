@@ -55,7 +55,7 @@ export default class UsersIndexContainer extends Component {
         let { users } = this.state;
         let { currentUser } = this.props;
         return (
-            <div className="">
+            <div className="ui text container">
                 <h1 className="page-header">Hello, {currentUser.firstName}!</h1>
                 {/* <h3  className="section-header">List of All Users</h3> */}
                 <aside className="aspect-ratio"></aside>

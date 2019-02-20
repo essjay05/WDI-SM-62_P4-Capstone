@@ -62,10 +62,10 @@ class UserShow extends Component {
         if (loading) return<div></div>
         return(
             <div className="resume-container ui celled centered grid">
-            <div className="column">
-                <div>
-                <h1 className="page-header">{user.firstName} {user.lastName}'s Resume</h1>
-                </div>
+                <div className="column">
+                    <div>
+                        <h1 className="page-header">{user.firstName} {user.lastName}'s Resume</h1>
+                    </div>
                     <div>
                         {/* <h3>Header/Hero Img upload goes here</h3> */}
                         {/* <img src="#">Hero Image</img> */}
