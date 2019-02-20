@@ -64,7 +64,7 @@ class FormInput extends Component {
                     <h1 className="section-header">User Login Info</h1> 
                     <div className="fields">
                         <div className="field">
-                            <label>First Name: </label>
+                            <label className="form-label">First Name: </label>
                             <input
                                 type="text"
                                 name="firstName"
@@ -74,7 +74,7 @@ class FormInput extends Component {
                                 />
                         </div>
                         <div className="field">
-                            <label>Last Name: </label>
+                            <label className="form-label">Last Name: </label>
                             <input
                                 type="text"
                                 name="lastName"
@@ -84,7 +84,7 @@ class FormInput extends Component {
                                 />
                         </div> 
                     </div>     
-                    <label>Email: </label>
+                    <label className="form-label">Email: </label>
                     <input 
                         type="text"
                         name="email"
@@ -92,7 +92,7 @@ class FormInput extends Component {
                         onChange={this.handleChange}
                         value={email}
                         />
-                    <label>Password: </label>
+                    <label className="form-label">Password: </label>
                     <input 
                         type="password"
                         name="password"
@@ -102,7 +102,7 @@ class FormInput extends Component {
                         />
                     
                     <h1 className="section-header"> User Info</h1>
-                    <label>City: </label>
+                    <label className="form-label">City: </label>
                     <input
                         type="text"
                         name="city"
@@ -112,7 +112,7 @@ class FormInput extends Component {
                         />
                     <div className="fields">
                         <div className="field">
-                            <label>State: </label>
+                            <label className="form-label">State: </label>
                             <input
                                 type="text"
                                 name="state"
@@ -122,7 +122,7 @@ class FormInput extends Component {
                                 />
                         </div>
                         <div className="field">
-                            <label>Country: </label>
+                            <label className="form-label">Country: </label>
                             <input 
                                 type="text"
                                 name="country"
@@ -132,7 +132,7 @@ class FormInput extends Component {
                                 />
                         </div>
                     </div>
-                        <label>Title: </label>
+                        <label className="form-label">Title: </label>
                         <input 
                             type="text"
                             name="title"
@@ -142,7 +142,7 @@ class FormInput extends Component {
                             />
                         
                     <h1 className="section-header"> User About Section</h1>
-                        <label>About: </label>
+                        <label className="form-label">About: </label>
                         <input
                             type="text"
                             name="aboutUser"
@@ -150,7 +150,7 @@ class FormInput extends Component {
                             value={aboutUser}
                             onChange={this.handleChange}
                             />
-                        <label>Skills </label>
+                        <label className="form-label">Skills </label>
                         <input
                             type="text"
                             name="skills"
@@ -160,7 +160,7 @@ class FormInput extends Component {
                             />
                         
                     <h1 className="section-header"> User Contact Links</h1>
-                        <label>LinkedIn: </label>
+                        <label className="form-label">LinkedIn: </label>
                         <input
                             type="text"
                             name="linkedIn"
@@ -168,7 +168,7 @@ class FormInput extends Component {
                             value={linkedIn}
                             onChange={this.handleChange}
                             />
-                        <label>Personal Website: </label>
+                        <label className="form-label">Personal Website: </label>
                         <input
                             type="text"
                             name="website"
@@ -176,7 +176,7 @@ class FormInput extends Component {
                             value={website}
                             onChange={this.handleChange}
                             />
-                        <label>GitHub: </label>
+                        <label className="form-label">GitHub: </label>
                         <input 
                             type="text"
                             name="github"

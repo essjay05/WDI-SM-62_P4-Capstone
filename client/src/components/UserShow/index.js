@@ -78,10 +78,10 @@ class UserShow extends Component {
                     <div className="userContactLinks-container">
                         <h3 className="section-header">Links:</h3>
                         <ul>
-                        <li><h5>Email: <a href={`${user.email}`}>{user.email}</a></h5></li>
-                        <li><h5>LinkedIn: <a href={`${user.linkedIn}`}>{user.linkedIn}</a></h5></li>
-                        <li><h5>Personal Website: <a href={`${user.website}`}>{user.website}</a></h5></li>
-                        <li><h5>GitHub: <a href={`${user.email}`}>{user.email}</a></h5></li>
+                            <li><i class="far fa-envelope"></i> Email: <a href={`${user.email}`}>{user.email}</a></li>
+                            <li><i class="fab fa-linkedin-in"></i> LinkedIn: <a href={`${user.linkedIn}`}>{user.linkedIn}</a></li>
+                            <li><i class="far fa-user-circle"></i> Personal Website: <a href={`${user.website}`}>{user.website}</a></li>
+                            <li><i class="fab fa-github-alt"></i> <a href={`${user.github}`}>{user.github}</a></li>
                         </ul>
                     </div>
                     <div className="userBlurb-container">

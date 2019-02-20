@@ -31,7 +31,7 @@ class Login extends Component {
                 <div className="row">
                     <div className="column column-50 column-offset-25">
                         <form onSubmit={this.handleSubmit} className="ui form">
-                            <label> Email: </label>
+                            <label className="form-label"> Email: </label>
                             <input
                                 type="text"
                                 name="email"
@@ -39,7 +39,7 @@ class Login extends Component {
                                 onChange={this.handleChange}
                                 value={email}
                                 />
-                            <label> Password: </label> 
+                            <label className="form-label"> Password: </label> 
                             <input
                                 type="password"
                                 name="password"
