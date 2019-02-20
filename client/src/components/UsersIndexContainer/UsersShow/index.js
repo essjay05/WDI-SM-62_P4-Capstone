@@ -37,8 +37,8 @@ class UsersShow extends Component {
     render () {
         let { user, loading, projects } = this.state;
         // let  { projects }  = this.props.user;
-        console.log(projects)
-        debugger 
+        // console.log(projects)
+        // debugger 
         if (loading) return<div></div>
         return(
             <div className="resume-container ui two column centered grid">
@@ -56,7 +56,7 @@ class UsersShow extends Component {
                     <div className="userContactLinks-container row">
                         <h3 className="section-header">Links:</h3>
                         <ul>
-                            <li><i class="far fa-envelope"></i> Email: <a href={`${user.email}`}>{user.email}</a></li>
+                            <li><i class="far fa-envelope"></i><a href={`${user.email}`}>{user.email}</a></li>
                             <li><i class="fab fa-linkedin-in"></i> LinkedIn: <a href={`${user.linkedIn}`}>{user.linkedIn}</a></li>
                             <li><i class="far fa-user-circle"></i> Personal Website: <a href={`${user.website}`}>{user.website}</a></li>
                             <li><i class="fab fa-github-alt"></i> <a href={`${user.github}`}>{user.github}</a></li>

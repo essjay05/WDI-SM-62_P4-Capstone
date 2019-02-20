@@ -26,28 +26,34 @@ class Login extends Component {
     render() {
         let { email, password } = this.state;
         return (
-            <div>
+            <div className="">
                 <h1 className="page-header"> Login </h1>
-                <div className="row">
-                    <div className="column column-50 column-offset-25">
+                <div className="ui text container">
+                    <div className="row">
                         <form onSubmit={this.handleSubmit} className="ui form">
-                            <label className="form-label"> Email: </label>
-                            <input
-                                type="text"
-                                name="email"
-                                placeholder="Your Login Email"
-                                onChange={this.handleChange}
-                                value={email}
-                                />
-                            <label className="form-label"> Password: </label> 
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="****************"
-                                onChange={this.handleChange}
-                                value={password}
-                                />
-                            <input className="ui inverted tiny green button" type="submit"/>
+                            <div className="field">
+                                <label className="form-label"> Email: </label>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder="Your Login Email"
+                                    onChange={this.handleChange}
+                                    value={email}
+                                    />
+                            </div>
+                            <div className="field">
+                                <label className="form-label"> Password: </label> 
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="****************"
+                                    onChange={this.handleChange}
+                                    value={password}
+                                    />
+                            </div>
+                            <div className="field">
+                                <input className="ui inverted tiny green button" type="submit"/>
+                            </div>
                         </form>
                     </div>
                 </div>

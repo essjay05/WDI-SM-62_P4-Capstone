@@ -61,7 +61,7 @@ class UserShow extends Component {
         // debugger 
         if (loading) return<div></div>
         return(
-            <div className="resume-container ui celled centered grid">
+            <div className="resume-container ui two column centered grid">
                 <div className="column">
                     <div>
                         <h1 className="page-header">{user.firstName} {user.lastName}'s Resume</h1>
@@ -78,7 +78,7 @@ class UserShow extends Component {
                     <div className="userContactLinks-container">
                         <h3 className="section-header">Links:</h3>
                         <ul>
-                            <li><i class="far fa-envelope"></i> Email: <a href={`${user.email}`}>{user.email}</a></li>
+                            <li><i class="far fa-envelope"></i><a href={`${user.email}`}>{user.email}</a></li>
                             <li><i class="fab fa-linkedin-in"></i> LinkedIn: <a href={`${user.linkedIn}`}>{user.linkedIn}</a></li>
                             <li><i class="far fa-user-circle"></i> Personal Website: <a href={`${user.website}`}>{user.website}</a></li>
                             <li><i class="fab fa-github-alt"></i> <a href={`${user.github}`}>{user.github}</a></li>
@@ -93,9 +93,9 @@ class UserShow extends Component {
                         <p>{user.skills}</p>
                     </div>
                     
-                    <div className="projects-container ui grid">
-                        <h3 className="section-header">Projects: </h3>
-                        <Link className="nav-link" to="/addProject"> Add Project </Link>
+                    <div className="projects-container row">
+                        <h3 className="section-header">Projects:  <Link className="nav-link" to="/addProject"> <i class="fas fa-plus-circle"></i> </Link> </h3>
+                       
                         { projects.map(( project, i ) => {
                             return<div className="eight wide column" key={i}>
                                 {/* <h5>{project.name}</h5>

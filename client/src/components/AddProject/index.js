@@ -36,26 +36,30 @@ export default class AddProject extends Component {
         return (
             <div>
                 <h1 className="page-header"> Upload a Project</h1>
-                <div className="">
-                    <div className="">
+                <div className="ui text container">
+                    <div className="row">
                         <form className="ui form" onSubmit={this.handleSubmit}>
-                            <div>
-                                <label>Title: </label>
-                                <input
-                                    type="text"
-                                    name="title"
-                                    placeholder="Title of your Project"
-                                    value={title}
-                                    onChange={this.handleChange}
-                                    />
-                                <label>Image Url: </label>
-                                <input
-                                    type="text"
-                                    name="image"
-                                    placeholder="Image url"
-                                    value={image}
-                                    onChange={this.handleChange}
-                                    />
+                            
+                                <div className="field">
+                                    <label>Title: </label>
+                                    <input
+                                        type="text"
+                                        name="title"
+                                        placeholder="Title of your Project"
+                                        value={title}
+                                        onChange={this.handleChange}
+                                        />
+                                </div>
+                                <div className="field">
+                                    <label>Image Url: </label>
+                                    <input
+                                        type="text"
+                                        name="image"
+                                        placeholder="Image url"
+                                        value={image}
+                                        onChange={this.handleChange}
+                                        />
+                                </div>
                                 <label>Description: </label>
                                 <input
                                     type="text"
@@ -80,15 +84,16 @@ export default class AddProject extends Component {
                                     value={deployedLink}
                                     onChange={this.handleChange}
                                     />
-                                <label>GitHub Link:</label>
-                                <input
-                                    type="text"
-                                    name="githubLink"
-                                    placeholder="www.github.com/(insert your username here)"
-                                    value={githubLink}
-                                    onChange={this.handleChange}
-                                    />
-                            </div>  
+                                <div className="field">
+                                    <label>GitHub Link:</label>
+                                    <input
+                                        type="text"
+                                        name="githubLink"
+                                        placeholder="www.github.com/(insert your username here)"
+                                        value={githubLink}
+                                        onChange={this.handleChange}
+                                        />
+                                </div>  
                             <input className="ui inverted green button" type="submit" />
                         </form>
                     </div>

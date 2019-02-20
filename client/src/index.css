@@ -56,9 +56,9 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("https://i.imgur.com/CuEGNte.jpg");
+    background-image: url("https://i.imgur.com/oU9cx4w.jpg");
     background-size: cover; 
-    height: 100vh;
+    height: 90vh;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -74,7 +74,7 @@ code {
 
 h1, h2 {
     color: white;
-    font-family: 'Eczar', serif;
+    font-family: 'Raleway', serif;
 }
 h3, h5, a, p {
     color: #d4d4dc;
@@ -97,14 +97,14 @@ a {
 .nav-link:link {
     color: #3d3d3f;
     font-weight: 400;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-transform: capitalize;
     line-height: 1.6rem;
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
 }
 
-.nav-link:hover {
+.nav-link:hover, .navBar-link:hover, .navBrand-link:hover {
     color: #fa625f;
 }
 .nav-link:active {
@@ -118,13 +118,12 @@ a {
 }
 
 /* Titles/Subtitles CSS */
-
 .brand-title {
     font-family: 'Montserrat Subrayada', sans-serif;
     color:#1d1e22;
     opacity: 20%;
     font-size: 175px;
-    position:;
+    /* position:; */
     margin-top: 460px;
     margin-right: 10px;
     z-index: -10;
@@ -137,13 +136,13 @@ a {
 
 .page-header {
     font-family: 'Montserrat Subrayada', sans-serif;
-    color: #3d3d3f;
+    color: white;
     font-size: 45px; 
 }
 
 .section-header {
     font-family: 'Raleway', sans-serif;
-    color:#3d3d3f;
+    color:white;
     font-size: 25px; 
 }
 
@@ -152,16 +151,16 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
-    /* align-items: center; */
+    align-items: center;
     width: 100%;
     height: 100%;
     list-style-type: none;
-    margin: 0;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
     font-family: 'Raleway', sans-serif;
-    font-size: 10px;
     color: #d4d4dc;
+    background: rgba(255, 255, 255, .15);
 }
+
 footer {
     position: sticky;
     bottom: 0;
@@ -174,22 +173,22 @@ footer {
 }
 
 form {
-    width: 40%;
-    display: flex;
+    /* width: 40%; */
+    display: grid;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, .15);
-    padding: 2rem;
+    padding: .5rem;
     overflow: hidden;
     position: sticky;
     top: 0;
     overflow: hidden;
     /* height: 100vh; */
-    /* border-radius: 1px; */
+    border-radius: 1%;
 }
 
-label {
+.form-label {
     color: white;
 }
 

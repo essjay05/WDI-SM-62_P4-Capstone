@@ -7,17 +7,17 @@ export default class Signup extends Component {
         email: "",
         password: "",
         firstName: "",
-        lastName: "",
-        title: "",
-        city: "",
-        state: "",
-        country: "",
-        skills: "",
-        aboutUser: "",
-        linkedIn: "",
-        github: "",
-        website: "",
-        projects: []
+        lastName: ""
+        // title: "",
+        // city: "",
+        // state: "",
+        // country: "",
+        // skills: "",
+        // aboutUser: "",
+        // linkedIn: "",
+        // github: "",
+        // website: "",
+        // projects: []
     }
 
     handleChange = (e) => {
@@ -32,13 +32,13 @@ export default class Signup extends Component {
         debugger
         if (user) {
             this.props.onSignupSuccess()
-            this.props.history.push('/users');
+            this.props.history.push('/edit');
             debugger
         }
     };
 
     render() {
-        let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
+        let { email, password, firstName, lastName } = this.state;
         // let { currentUser } = this.props;
                 
         return (
@@ -47,51 +47,55 @@ export default class Signup extends Component {
                 ? ( */}
                 <div>
                     <h3 className="page-header"> Signup </h3>
-                    <div className="form-container">
-                        <div className="row">
-                            <div className="">
-                                <form onSubmit={this.handleSubmit} className="ui form">
-                                    <h1 className="section-header"> User Login Info</h1>
-                                    <div className="fields">
-                                        <div className="field">
-                                            <label className="form-label">First Name: </label>
-                                            <input
-                                                type="text"
-                                                name="firstName"
-                                                placeholder="Your First Name"
-                                                onChange={this.handleChange}
-                                                value={firstName}
-                                                />
-                                        </div>
-                                        <div className="field">
-                                            <label className="form-label">Last Name: </label>
-                                            <input
-                                                type="text"
-                                                name="lastName"
-                                                placeholder="Your Last Name"
-                                                onChange={this.handleChange}
-                                                value={lastName}
-                                                />
-                                        </div> 
-                                    </div>     
+                    <div className="ui text container">
+                        <div className="">
+                            <form onSubmit={this.handleSubmit} className="ui form">
+                                <h1 className="section-header"> Login Info</h1>
+                                <div className="two fields">
+                                    <div className="field">
+                                        <label className="form-label">First Name: </label>
+                                        <input
+                                            type="text"
+                                            name="firstName"
+                                            placeholder="First Name"
+                                            onChange={this.handleChange}
+                                            value={firstName}
+                                            />
+                                    </div>
+                                    <div className="field">
+                                        <label className="form-label">Last Name: </label>
+                                        <input
+                                            type="text"
+                                            name="lastName"
+                                            placeholder="Last Name"
+                                            onChange={this.handleChange}
+                                            value={lastName}
+                                            />
+                                    </div>
+                                </div>         
+                                <div className="field">
                                     <label className="form-label">Email: </label>
                                     <input 
                                         type="text"
                                         name="email"
-                                        placeholder="Your Email"
+                                        placeholder="Email"
                                         onChange={this.handleChange}
                                         value={email}
                                         />
+                                </div>
+                                <div className="field">
                                     <label className="form-label">Password: </label>
                                     <input 
                                         type="password"
                                         name="password"
-                                        placeholder="Secret password here..."
+                                        placeholder="Password"
                                         onChange={this.handleChange}
                                         value={password}
                                         />
-                                    
-                                    <h1 className="section-header"> User Info</h1>
+                                </div>
+                                
+                                {/* <h1 className="section-header"> General Info</h1>
+                                <div className="field">
                                     <label className="form-label">City: </label>
                                     <input
                                         type="text"
@@ -100,28 +104,30 @@ export default class Signup extends Component {
                                         value={city}
                                         onChange={this.handleChange}
                                         />
-                                    <div className="fields">
-                                        <div className="field">
-                                            <label className="form-label">State: </label>
-                                            <input
-                                                type="text"
-                                                name="state"
-                                                placeholder="Your State"
-                                                value={state}
-                                                onChange={this.handleChange}
-                                                />
-                                        </div>
-                                        <div className="field">
-                                            <label className="form-label">Country: </label>
-                                            <input 
-                                                type="text"
-                                                name="country"
-                                                placeholder="Your Country"
-                                                value={country}
-                                                onChange={this.handleChange}
-                                                />
-                                        </div>
+                                </div>
+                                <div className="two fields">
+                                    <div className="field">
+                                        <label className="form-label">State: </label>
+                                        <input
+                                            type="text"
+                                            name="state"
+                                            placeholder="Your State"
+                                            value={state}
+                                            onChange={this.handleChange}
+                                            />
                                     </div>
+                                    <div className="field">
+                                        <label className="form-label">Country: </label>
+                                        <input 
+                                            type="text"
+                                            name="country"
+                                            placeholder="Your Country"
+                                            value={country}
+                                            onChange={this.handleChange}
+                                            />
+                                    </div>
+                                </div>
+                                <div className="field">
                                     <label className="form-label">Title: </label>
                                     <input 
                                         type="text"
@@ -130,8 +136,10 @@ export default class Signup extends Component {
                                         value={title}
                                         onChange={this.handleChange}
                                         />
-                                
-                                    <h1  className="section-header"> User About Section</h1>
+                                </div>
+
+                                <h1  className="section-header"> About / Skills </h1>
+                                <div className="field">
                                     <label className="form-label">About: </label>
                                     <input
                                         type="text"
@@ -140,6 +148,8 @@ export default class Signup extends Component {
                                         value={aboutUser}
                                         onChange={this.handleChange}
                                         />
+                                </div>
+                                <div className="field">
                                     <label className="form-label">Skills </label>
                                     <input
                                         type="text"
@@ -148,8 +158,11 @@ export default class Signup extends Component {
                                         value={skills}
                                         onChange={this.handleChange}
                                         />
+                                </div>
                                 
-                                    <h1  className="section-header"> User Contact Links</h1>
+
+                                <h1  className="section-header"> Contact Links</h1>
+                                <div className="field">
                                     <label className="form-label">LinkedIn: </label>
                                     <input
                                         type="text"
@@ -158,6 +171,8 @@ export default class Signup extends Component {
                                         value={linkedIn}
                                         onChange={this.handleChange}
                                         />
+                                </div>
+                                <div className="field">
                                     <label className="form-label">Personal Website: </label>
                                     <input
                                         type="text"
@@ -166,6 +181,8 @@ export default class Signup extends Component {
                                         value={website}
                                         onChange={this.handleChange}
                                         />
+                                </div>
+                                <div className="field">
                                     <label className="form-label">GitHub: </label>
                                     <input 
                                         type="text"
@@ -174,11 +191,14 @@ export default class Signup extends Component {
                                         value={github}
                                         onChange={this.handleChange}
                                         /> 
-                
+                                </div> */}
+                                <div className="field"> 
                                     <input className="ui inverted tiny green button" type="submit" />
-                                </form>
-                            </div>    
-                        </div>
+                                </div>
+                                
+                            </form>
+                        </div>    
+                        
                     </div>
                 </div>    
                 {/* ) : (

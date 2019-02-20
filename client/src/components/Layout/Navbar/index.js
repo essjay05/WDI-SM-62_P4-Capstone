@@ -5,31 +5,33 @@ import './Navbar.css';
 
 export default ({ currentUser }) => {
     return (
-        <nav className="navLeft clearfix column">
-            <div className="float-left">
-                <Link className="nav-link brand" to="/">PORT=f0710</Link>
-                {/* <Link className="nav-link" to="/"> Home </Link> */}
-            </div>
-            <div className="float-right">
-            { currentUser
-            ? (
-                <div className="">
-                    <span>
-                        <Link className="nav-link" to="/users"> Users Index </Link>
-                        <Link className="nav-link" to="/user/"> User Profile</Link>
-                        <Link className="nav-link" to="/edit"> Edit </Link>
-                        <Link className="nav-link" to="/logout"> Logout </Link>
-                    </span>
+        <nav className="navBar ui borderless tiny inverted stackable menu">
+            <div className="ui container">
+                <div className="left">
+                    <Link className="navBrand-link" to="/">PORT=f0710  <i class="fas fa-home"></i></Link>
+                    {/* <Link className="nav-link" to="/"> Home </Link> */}
                 </div>
-                )
-                : (
-                <div className="">
-                    <span>
-                        <Link className="nav-link" to="/login"> Login </Link>
-                        <Link className="nav-link" to="/"> Signup </Link>
-                    </span>
+                <div className="right">
+                { currentUser
+                ? (
+                    <div className="">
+                        <span>
+                            <Link className="navBar-link" to="/users"> <i class="fas fa-users"></i> </Link>
+                            <Link className="navBar-link" to="/user/"> <i class="far fa-user"></i> </Link>
+                            <Link className="navBar-link" to="/edit"> <i class="fas fa-user-edit"></i> </Link>
+                            <Link className="navBar-link" to="/logout"> <i class="fas fa-sign-out-alt"></i> </Link>
+                        </span>
+                    </div>
+                    )
+                    : (
+                    <div className="">
+                        <span>
+                            <Link className="navBar-link" to="/login"> <i class="fas fa-sign-out-alt"></i> </Link>
+                            <Link className="navBar-link" to="/"> Signup </Link>
+                        </span>
+                    </div>
+                    )}
                 </div>
-                )}
             </div>
         </nav>
     )

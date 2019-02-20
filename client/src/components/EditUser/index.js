@@ -36,7 +36,8 @@ class FormInput extends Component {
         let user = axios.patch(`/api/users/${this.props.currentUser._id}`, this.state)
             if (user) {
                 this.props.onLoginSuccess()
-                this.props.history.push(`/users/${currentUser._id}`)
+                // this.props.history.push(`/users/${currentUser._id}`)
+                this.props.history.push(`/users`)
                 debugger
             }
             debugger
@@ -54,63 +55,72 @@ class FormInput extends Component {
     render() {
         // let { currentUser } = this.props;
         let { email, password, firstName, lastName, city, state, country, title, aboutUser, skills, linkedIn, website, github } = this.state;
-        console.log(this.props.user)
+        // console.log(this.props.user)
         // debugger
         return (
-            <div>
-                <h1 className="page-header"> Edit Profile </h1>
+            <div className="ui text container">
+                <h1 className="page-header"> Edit Your Profile </h1>
                 <div className="row">
                     <form onSubmit={this.handleSubmit} className="ui form">
-                    <h1 className="section-header">User Login Info</h1> 
-                    <div className="fields">
-                        <div className="field">
-                            <label className="form-label">First Name: </label>
-                            <input
-                                type="text"
-                                name="firstName"
-                                placeholder="Your First Name"
-                                onChange={this.handleChange}
-                                value={firstName}
-                                />
+                    <h1 className="section-header">Login Info</h1> 
+                    {/* <div className="fields"> */}
+                        <div className="two fields">
+                            <div className="field">
+                                <label className="form-label">First Name: </label>
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    placeholder="Your First Name"
+                                    onChange={this.handleChange}
+                                    value={firstName}
+                                    />
+                            </div>
+                        
+                            <div className="field">
+                                <label className="form-label">Last Name: </label>
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    placeholder="Your Last Name"
+                                    onChange={this.handleChange}
+                                    value={lastName}
+                                    />
+                            </div> 
                         </div>
-                        <div className="field">
-                            <label className="form-label">Last Name: </label>
-                            <input
-                                type="text"
-                                name="lastName"
-                                placeholder="Your Last Name"
-                                onChange={this.handleChange}
-                                value={lastName}
-                                />
-                        </div> 
-                    </div>     
-                    <label className="form-label">Email: </label>
-                    <input 
-                        type="text"
-                        name="email"
-                        placeholder="Your Email"
-                        onChange={this.handleChange}
-                        value={email}
-                        />
-                    <label className="form-label">Password: </label>
-                    <input 
-                        type="password"
-                        name="password"
-                        placeholder="Secret password here..."
-                        onChange={this.handleChange}
-                        value={password}
-                        />
-                    
-                    <h1 className="section-header"> User Info</h1>
-                    <label className="form-label">City: </label>
-                    <input
-                        type="text"
-                        name="city"
-                        placeholder="Your City"
-                        value={city}
-                        onChange={this.handleChange}
-                        />
-                    <div className="fields">
+                    {/* </div>      */}
+                    <div className="field">
+                        <label className="form-label">Email: </label>
+                        <input 
+                            type="text"
+                            name="email"
+                            placeholder="Your Email"
+                            onChange={this.handleChange}
+                            value={email}
+                            />
+                    </div>
+                    <div className="field">
+                        <label className="form-label">Password: </label>
+                        <input 
+                            type="password"
+                            name="password"
+                            placeholder="Secret password here..."
+                            onChange={this.handleChange}
+                            value={password}
+                            />
+                    </div>
+
+                    <h1 className="section-header"> General Info...</h1>
+                    <div className="field">
+                        <label className="form-label">City: </label>
+                        <input
+                            type="text"
+                            name="city"
+                            placeholder="Your City"
+                            value={city}
+                            onChange={this.handleChange}
+                            />
+                    </div>
+                    <div className="two fields">
                         <div className="field">
                             <label className="form-label">State: </label>
                             <input
@@ -132,6 +142,7 @@ class FormInput extends Component {
                                 />
                         </div>
                     </div>
+                    <div className="field">
                         <label className="form-label">Title: </label>
                         <input 
                             type="text"
@@ -140,8 +151,9 @@ class FormInput extends Component {
                             value={title}
                             onChange={this.handleChange}
                             />
-                        
-                    <h1 className="section-header"> User About Section</h1>
+                    </div>
+                    <h1 className="section-header"> About You / Skills...</h1>
+                    <div className="field">
                         <label className="form-label">About: </label>
                         <input
                             type="text"
@@ -150,6 +162,8 @@ class FormInput extends Component {
                             value={aboutUser}
                             onChange={this.handleChange}
                             />
+                    </div>
+                    <div className="field">
                         <label className="form-label">Skills </label>
                         <input
                             type="text"
@@ -158,8 +172,10 @@ class FormInput extends Component {
                             value={skills}
                             onChange={this.handleChange}
                             />
+                    </div>
                         
-                    <h1 className="section-header"> User Contact Links</h1>
+                    <h1 className="section-header">Contact Links</h1>
+                    <div className="field">
                         <label className="form-label">LinkedIn: </label>
                         <input
                             type="text"
@@ -168,6 +184,8 @@ class FormInput extends Component {
                             value={linkedIn}
                             onChange={this.handleChange}
                             />
+                    </div>
+                    <div className="field">
                         <label className="form-label">Personal Website: </label>
                         <input
                             type="text"
@@ -176,6 +194,8 @@ class FormInput extends Component {
                             value={website}
                             onChange={this.handleChange}
                             />
+                    </div>
+                    <div className="field">
                         <label className="form-label">GitHub: </label>
                         <input 
                             type="text"
@@ -183,16 +203,16 @@ class FormInput extends Component {
                             placeholder="Your GitHub"
                             value={github}
                             onChange={this.handleChange}
-                            /> 
+                            />
+                    </div>
 
-                        <div className="buttons">
-                            <input className="ui inverted green button" type="submit" />
-                            <button className="ui inverted red button" onClick={this.handleDelete}>Delete</button>
-                        </div>
-                    </form>
-                </div>
+                    <div className="field buttons">
+                        <input className="ui inverted green button" type="submit" />
+                        <button className="ui inverted red button" onClick={this.handleDelete}>Delete</button>
+                    </div>
+                </form>
             </div>
-            
+        </div>        
         );
     }
 }

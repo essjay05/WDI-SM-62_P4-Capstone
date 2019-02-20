@@ -26,7 +26,7 @@ export default class UserInfo extends Component {
             <div className="ui celled grid">
                 <div className="row">
                     <div className="four wide column">
-                        <img></img>
+                        <img class="ui medium circular image" src="/images/wireframe/square-image.png"/>
                     </div>
                     <div className="ten wide column">
                     {/* <h3 className="section-header">{user.firstName} {user.lastName}</h3> */}
@@ -39,7 +39,7 @@ export default class UserInfo extends Component {
                         {/* <img src="${user.profileImg}" alt="User Profile">Profile Photo</img> */}
                         <ul>
                             {/* <li><img src="#">User Profile image Here</img></li> */}
-                            <li>Location: {user.city}, {user.state}, {user.country}</li>
+                            <li>{user.city}, {user.state}, {user.country}</li>
                             <li>Title: {user.title}</li>    
                         </ul>
                     </div> 
