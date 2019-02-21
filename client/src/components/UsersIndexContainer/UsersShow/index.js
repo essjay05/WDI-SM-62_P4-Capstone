@@ -70,7 +70,7 @@ class UsersShow extends Component {
                         <h3 className="section-header">Skills:</h3>
                         <p>{user.skills}</p>
                     </div>
-                    <div className="projects-container sixteen wide column">
+                    <div className="projects-container row">
                         <h3 className="section-header">Projects:</h3>
                             <div className="ui cards">
                             { projects.map(( project, i ) => {
