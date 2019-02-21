@@ -13,7 +13,7 @@ export default ({ project, i, user, projects }) => {
     
     // debugger
         return (
-            <div className="ui cards">
+            <div className="card four wide column">
                 <div className="content">
                     {/* <div className="image"><img src={project.image}>Image Box goes here</img></div> */}
                     <div className="header"><h3 className="card-text">"{project.title}"</h3></div>

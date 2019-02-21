@@ -70,12 +70,12 @@ class UserShow extends Component {
                         {/* <h3>Header/Hero Img upload goes here</h3> */}
                         {/* <img src="#">Hero Image</img> */}
                     </div>
-                    <div className="userInfo-container">
+                    <div className="userInfo-container row">
                         {/* <h3>UserInfo: </h3> */}
                         <UserInfo user={ user } />
                     </div>
                     
-                    <div className="userContactLinks-container">
+                    <div className="userContactLinks-container row">
                         <h3 className="section-header">Links:</h3>
                         <ul>
                             <li><i class="far fa-envelope"></i><a href={`${user.email}`}>{user.email}</a></li>
@@ -84,34 +84,36 @@ class UserShow extends Component {
                             <li><i class="fab fa-github-alt"></i> <a href={`${user.github}`}>{user.github}</a></li>
                         </ul>
                     </div>
-                    <div className="userBlurb-container">
+                    <div className="userBlurb-container row">
                         <h3 className="section-header">About {user.firstName}:</h3>
                         <p>{user.aboutUser}</p>
                     </div>
-                    <div className="userSkills-container">
+                    <div className="userSkills-container row">
                         <h3 className="section-header">Skills:</h3>
                         <p>{user.skills}</p>
                     </div>
                     
                     <div className="projects-container row">
                         <h3 className="section-header">Projects:  <Link className="nav-link" to="/addProject"> <i class="fas fa-plus-circle"></i> </Link> </h3>
-                       
-                        { projects.map(( project, i ) => {
-                            return<div className="eight wide column" key={i}>
-                                {/* <h5>{project.name}</h5>
-                                <p>{project.description}</p>
-                                <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                                <Project 
-                                user={ user }
-                                projects={user.projects}
-                                project={project}
-                                projectid={project._id}
-                                />
-                                <form onSubmit={this.handleDeleteProject} target={project._id}>
-                                    <input className="ui inverted tiny red button" value="Delete Project" type="submit"/>
-                                </form>
-                            </div>
-                        })}
+                        <div className="ui cards">
+                            { projects.map(( project, i ) => {
+                                return<div className="card" key={i}>
+                                    {/* <h5>{project.name}</h5>
+                                    <p>{project.description}</p>
+                                    <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
+                                    <Project 
+                                    user={ user }
+                                    projects={user.projects}
+                                    project={project}
+                                    projectid={project._id}
+                                    className="eight wide column"
+                                    />
+                                    <form onSubmit={this.handleDeleteProject} target={project._id}>
+                                        <input className="ui inverted tiny red button" value="Delete Project" type="submit"/>
+                                    </form>
+                                </div>
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>

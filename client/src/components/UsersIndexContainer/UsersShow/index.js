@@ -48,7 +48,7 @@ class UsersShow extends Component {
                         {/* <h3>Header/Hero Img upload goes here</h3> */}
                         {/* <img src="#">Hero Image</img> */}
                     </div>
-                    <div className="userInfo-container">
+                    <div className="userInfo-container row">
                         {/* <h3>UserInfo: </h3> */}
                         <UserInfo user={ user } />
                     </div>
@@ -72,20 +72,23 @@ class UsersShow extends Component {
                     </div>
                     <div className="projects-container row">
                         <h3 className="section-header">Projects:</h3>
-                        { projects.map(( project, i ) => {
-                            return<div className="eight wide column " key={i}>
-                                    {/* <h5>{project.name}</h5>
-                                    <p>{project.description}</p>
-                                    <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
-                                    <Project 
-                                    key={i}
-                                    user={ user }
-                                    projects={user.projects}
-                                    project={project}
-                                    projectid={project._id}
-                                    />
-                            </div>
-                        })}
+                            <div className="ui cards">
+                            { projects.map(( project, i ) => {
+                                return<div className="card" key={i}>
+                                        {/* <h5>{project.name}</h5>
+                                        <p>{project.description}</p>
+                                        <Link className="nav-link" to="/editProject"> Edit Project </Link> */}
+                                        <Project 
+                                        key={i}
+                                        user={ user }
+                                        projects={user.projects}
+                                        project={project}
+                                        projectid={project._id}
+                                        className="eight wide column"
+                                        />
+                                </div>
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
