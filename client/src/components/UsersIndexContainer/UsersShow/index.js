@@ -42,18 +42,18 @@ class UsersShow extends Component {
         if (loading) return<div></div>
         return(
             <div className="resume-container ui two column centered grid">
-                <div className="column">    
+                <div className="column ui grid">    
                     <div>
                         <h1 className="page-header">{user.firstName} {user.lastName}'s Resume </h1>
                         {/* <h3>Header/Hero Img upload goes here</h3> */}
                         {/* <img src="#">Hero Image</img> */}
                     </div>
-                    <div className="userInfo-container row">
+                    <div className="userInfo-container sixteen wide column">
                         {/* <h3>UserInfo: </h3> */}
                         <UserInfo user={ user } />
                     </div>
                     
-                    <div className="userContactLinks-container row">
+                    <div className="userContactLinks-container sixteen wide column">
                         <h3 className="section-header">Links:</h3>
                         <ul>
                             <li><i class="far fa-envelope"></i><a href={`${user.email}`}>{user.email}</a></li>
@@ -62,15 +62,15 @@ class UsersShow extends Component {
                             <li><i class="fab fa-github-alt"></i> <a href={`${user.github}`}>{user.github}</a></li>
                         </ul>
                     </div>
-                    <div className="userBlurb-container row">
+                    <div className="userBlurb-container eight wide column">
                         <h3 className="section-header">About {user.firstName}:</h3>
                         <p>{user.aboutUser}</p>
                     </div>
-                    <div className="userSkills-container row">
+                    <div className="userSkills-container eight wide column">
                         <h3 className="section-header">Skills:</h3>
                         <p>{user.skills}</p>
                     </div>
-                    <div className="projects-container row">
+                    <div className="projects-container sixteen wide column">
                         <h3 className="section-header">Projects:</h3>
                             <div className="ui cards">
                             { projects.map(( project, i ) => {
