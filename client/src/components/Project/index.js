@@ -20,8 +20,8 @@ export default ({ project, i, user, projects }) => {
                     <div className="description"><h4 className="card-text">Description:{project.description}</h4></div>
                     <div className="description"><h5 className="card-text">Tech Used:{project.techUsed}</h5></div>
                     <div className="projectLinks description" >
-                        <i class="fas fa-external-link-alt"></i><a className="card-text" href="{project.deployedLink}">Deployed Link</a>
-                        <i class="fab fa-github-alt"></i><a className="card-text" href="{project.githubLink}">GitHub Link</a>
+                        <a className="card-text" href="{project.deployedLink}"><i class="fas fa-external-link-alt"></i></a>
+                        <a className="card-text" href="{project.githubLink}"><i class="fab fa-github-alt"></i></a>
                     </div>
                 </div>
             </div>
