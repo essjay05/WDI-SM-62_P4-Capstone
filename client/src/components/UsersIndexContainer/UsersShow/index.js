@@ -43,11 +43,7 @@ class UsersShow extends Component {
         return(
             <div className="resume-container ui two column centered grid">
                 <div className="column ui grid">    
-<<<<<<< HEAD
-                    <div>
-=======
                     <div className="userHeader-container sixteen wide column">
->>>>>>> edbf6370d718e59ac364759a1142d3ac10c01d8d
                         <h1 className="page-header">{user.firstName} {user.lastName}'s Resume </h1>
                         {/* <h3>Header/Hero Img upload goes here</h3> */}
                         {/* <img src="#">Hero Image</img> */}
