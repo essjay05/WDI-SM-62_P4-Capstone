@@ -167,6 +167,10 @@ footer {
     z-index: -1;
 }
 
+.cards {
+    margin: .5rem;
+}
+
 /* Form CSS */
 .form-container{
     position: sticky;
